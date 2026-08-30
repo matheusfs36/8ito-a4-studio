@@ -1,0 +1,218 @@
+/* R23 — editorial fill candidate
+   Presentation only. Keeps A4, products, prices and active images untouched.
+   Goal: use the full sheet with a calmer editorial rhythm, larger food presence
+   and fewer dashboard-like boxes while preserving the R19 visual alphabet. */
+
+.menu-page.r19.r23{
+  --r23-gold:#d8b46d;
+  --r23-hair:rgba(216,180,109,.34);
+  --r23-hair-soft:rgba(216,180,109,.16);
+  --r23-cream:#f7f0e3;
+}
+
+/* Fill more of the physical sheet instead of leaving a large dead footer zone. */
+.r19.r23 .menu-inner{
+  padding:1.65% 2.05% 1.5%!important;
+  gap:1.02%!important;
+  align-content:space-between!important;
+  grid-template-rows:auto auto auto auto auto auto!important;
+}
+
+/* Brand lockup: still restrained, but with a little more authority. */
+.r19.r23 .menu-header{
+  padding:.08% 0 .18%!important;
+}
+.r19.r23 .menu-infinity{
+  font-size:31px!important;
+  height:.48em!important;
+  color:var(--r23-gold)!important;
+}
+.r19.r23 .menu-logo{
+  font-size:42px!important;
+  letter-spacing:.095em!important;
+}
+.r19.r23 .menu-tagline{
+  font-size:8.5px!important;
+  letter-spacing:.28em!important;
+  margin-top:.45%!important;
+}
+.r19.r23 .r19-brand-rule{
+  width:42%!important;
+  margin-top:.8%!important;
+}
+
+/* Upper two-column menu gets slightly larger images and clearer reading size. */
+.r19.r23 .menu-columns{
+  gap:3.55%!important;
+  padding-bottom:.35%!important;
+}
+.r19.r23 .menu-columns::before{
+  top:8%!important;
+  bottom:2%!important;
+  opacity:.78;
+}
+.r19.r23 .menu-stack{gap:.45%!important}
+.r19.r23 .menu-item{
+  grid-template-columns:17.4% minmax(0,1fr)!important;
+  gap:2.35%!important;
+  padding:.30% 0!important;
+  border-bottom:.55px solid rgba(216,180,109,.105)!important;
+}
+.r19.r23 .menu-item-image{
+  aspect-ratio:1.32/1!important;
+  border-color:rgba(216,180,109,.36)!important;
+  background:#052a23!important;
+}
+.r19.r23 .menu-item-image img{
+  padding:5.2%!important;
+}
+.r19.r23 .menu-item-name{
+  font-size:12.8px!important;
+  line-height:1.16!important;
+}
+.r19.r23 .menu-item-price{
+  font-size:12.6px!important;
+}
+.r19.r23 #leftMenuColumn::after{
+  content:"∞";
+  bottom:2.1%!important;
+  font-size:42px!important;
+  color:rgba(216,180,109,.12)!important;
+  opacity:1!important;
+}
+
+/* Slightly more presence for the section punctuation. */
+.r19.r23 .r19-heading{
+  margin-bottom:.62%!important;
+  gap:.48em!important;
+}
+.r19.r23 .r19-kicker{
+  font-size:10px!important;
+  letter-spacing:.22em!important;
+}
+.r19.r23 .r19-loz{
+  width:6px!important;
+  height:6px!important;
+  flex-basis:6px!important;
+}
+
+/* Lower half: editorial bands, not stacked UI cards. */
+.r19.r23 .r14-pizza-band,
+.r19.r23 .beverage-section{
+  border-left:0!important;
+  border-right:0!important;
+  border-radius:0!important;
+  border-top:.65px solid rgba(216,180,109,.40)!important;
+  border-bottom:.65px solid rgba(216,180,109,.24)!important;
+  background:rgba(5,40,33,.10)!important;
+  box-shadow:none!important;
+}
+.r19.r23 .r14-pizza-band{
+  padding:.72% 1.35% .82%!important;
+}
+.r19.r23 .r14-pizza-grid{
+  gap:2.4%!important;
+}
+.r19.r23 .r14-pizza-card{
+  padding:0 5%!important;
+}
+.r19.r23 .r14-pizza-card .r14-frame{
+  max-width:98px!important;
+  aspect-ratio:1/1!important;
+  margin-bottom:5.4%!important;
+  border-color:rgba(216,180,109,.40)!important;
+  background:#052a23!important;
+}
+.r19.r23 .r14-pizza-card .r14-frame img{
+  padding:4.8%!important;
+}
+.r19.r23 .r14-pizza-card strong{
+  font-size:12.5px!important;
+  line-height:1.16!important;
+}
+.r19.r23 .r14-pizza-card span{
+  font-size:12.4px!important;
+  margin-top:.34em!important;
+}
+
+.r19.r23 .beverage-section{
+  padding:.72% 1.2% .9%!important;
+}
+.r19.r23 .beverage-grid{
+  gap:1.1%!important;
+}
+.r19.r23 .beverage-card{
+  padding:0 5.5%!important;
+}
+.r19.r23 .beverage-icon{
+  width:72%!important;
+  max-width:96px!important;
+  aspect-ratio:1.10/1!important;
+  margin-bottom:4.2%!important;
+  border-color:rgba(216,180,109,.34)!important;
+}
+.r19.r23 .beverage-card strong{
+  font-size:12.3px!important;
+  line-height:1.16!important;
+}
+.r19.r23 .beverage-card span{
+  font-size:12.4px!important;
+  margin-top:.32em!important;
+}
+.r19.r23 .beverage-card:not(:last-child)::after{
+  width:5.5px!important;
+  height:5.5px!important;
+  right:-3px!important;
+  background:rgba(216,180,109,.52)!important;
+}
+
+/* Promotions retain a framed cartouche because they are the commercial callout. */
+.r19.r23 .promo-section{
+  padding:.72% 1.05% .88%!important;
+  border:.7px solid rgba(216,180,109,.52)!important;
+  border-radius:3px!important;
+  background:rgba(8,46,38,.22)!important;
+}
+.r19.r23 .promo-grid{
+  gap:1.6%!important;
+}
+.r19.r23 .promo-card{
+  grid-template-columns:40% minmax(0,1fr)!important;
+  gap:6.5%!important;
+  padding:.15% 3% .15% 0!important;
+}
+.r19.r23 .promo-card .promo-thumb{
+  aspect-ratio:1.34/1!important;
+  border-color:rgba(216,180,109,.34)!important;
+}
+.r19.r23 .promo-card strong{
+  font-size:12.1px!important;
+  line-height:1.16!important;
+}
+.r19.r23 .promo-price{
+  font-size:12.4px!important;
+  padding-top:.16em!important;
+}
+
+/* Footer acts as the final editorial anchor near the bottom of the frame. */
+.r19.r23 .menu-footer{
+  min-height:18px;
+  font-size:8.6px!important;
+  letter-spacing:.12em!important;
+  padding-top:.35%!important;
+  align-self:end;
+}
+.r19.r23 .menu-footer::before,
+.r19.r23 .menu-footer::after{
+  width:13%!important;
+  background:rgba(216,180,109,.34)!important;
+}
+
+/* Selection chrome never contaminates the printed/exported design. */
+.r14-exporting.r19.r23 .menu-item.is-selected,
+.r14-exporting.r19.r23 .r14-pizza-card.is-selected,
+.r14-exporting.r19.r23 .beverage-card.is-selected,
+.r14-exporting.r19.r23 .promo-card.is-selected{
+  outline:0!important;
+  background:transparent!important;
+}
