@@ -74,7 +74,23 @@ if ($LASTEXITCODE -ne 0) {
     exit $LASTEXITCODE
 }
 
-Step '5. ABRIR CANDIDATO R22.1'
+Step '5. TROCAR SERVIDOR R22 LOCAL'
+$labNeedle = $LabRoot.ToLowerInvariant()
+$old = Get-CimInstance Win32_Process -Filter "Name='python.exe' OR Name='pythonw.exe'" -ErrorAction SilentlyContinue |
+    Where-Object {
+        $cmd = [string]$_.CommandLine
+        $low = $cmd.ToLowerInvariant()
+        $low.Contains('server_r22.py') -and $low.Contains($labNeedle)
+    }
+foreach ($proc in @($old)) {
+    Write-Host "STOP   PID $($proc.ProcessId) · R22 anterior" -ForegroundColor DarkGray
+    Stop-Process -Id $proc.ProcessId -Force -ErrorAction SilentlyContinue
+}
+if (@($old).Count -eq 0) { Write-Host 'PASS   nenhum R22 anterior precisava ser encerrado' -ForegroundColor Green }
+else { Write-Host "PASS   $(@($old).Count) servidor(es) R22 anterior(es) encerrado(s)" -ForegroundColor Green }
+Start-Sleep -Milliseconds 350
+
+Step '6. ABRIR CANDIDATO R22.1'
 $launcher = Join-Path $LabRoot 'Run-8ITO-A4-Studio-0001.ps1'
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File $launcher
 if ($LASTEXITCODE -ne 0) { throw "Launcher R22.1 terminou com EXIT CODE $LASTEXITCODE" }
