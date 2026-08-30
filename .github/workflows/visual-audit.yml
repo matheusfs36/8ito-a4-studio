@@ -1,0 +1,58 @@
+name: Visual Audit
+
+on:
+  push:
+    branches:
+      - codex/r22-production-hardening
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Start 8ito server
+        run: |
+          python -u server_r223.py --host 127.0.0.1 --port 8794 > /tmp/8ito-server.log 2>&1 &
+          echo $! > /tmp/8ito-server.pid
+          for i in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:8794/api/project >/dev/null; then exit 0; fi
+            sleep 0.5
+          done
+          cat /tmp/8ito-server.log
+          exit 1
+
+      - name: Capture A4 and workspace
+        run: node tools/visual-audit.mjs
+
+      - name: Print server log
+        if: always()
+        run: cat /tmp/8ito-server.log || true
+
+      - name: Upload visual audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-audit-${{ github.sha }}
+          path: visual-audit/
+          if-no-files-found: error
+          retention-days: 14
