@@ -9,7 +9,7 @@ if (-not $python) { throw 'Python nao encontrado.' }
 if (-not (Test-Path -LiteralPath $server -PathType Leaf)) { throw "server_r22.py ausente: $server" }
 
 Write-Host '============================================================' -ForegroundColor DarkGreen
-Write-Host ' 8ITO R22 PRODUCTION - SMOKE TEST' -ForegroundColor Green
+Write-Host ' 8ITO R22.1 PRODUCTION - SMOKE TEST' -ForegroundColor Green
 Write-Host '============================================================' -ForegroundColor DarkGreen
 
 Write-Host 'CHECK   Python syntax' -ForegroundColor Cyan
@@ -17,10 +17,10 @@ Write-Host 'CHECK   Python syntax' -ForegroundColor Cyan
 if ($LASTEXITCODE -ne 0) { throw 'py_compile falhou' }
 Write-Host 'PASS    server_r22.py compila' -ForegroundColor Green
 
-foreach ($file in @('studio-r22-production.js','studio-r22-production.css','studio-r22-safety.js','index.html')) {
+foreach ($file in @('studio-r22-production.js','studio-r22-production.css','studio-r22-safety.js','studio-r22-workspace.js','studio-r22-workspace.css','index.html')) {
     if (-not (Test-Path -LiteralPath (Join-Path $root $file) -PathType Leaf)) { throw "Arquivo R22 ausente: $file" }
 }
-Write-Host 'PASS    arquivos R22 presentes' -ForegroundColor Green
+Write-Host 'PASS    arquivos R22.1 presentes' -ForegroundColor Green
 
 $port = 8831
 $listeners = [System.Net.NetworkInformation.IPGlobalProperties]::GetIPGlobalProperties().GetActiveTcpListeners() | ForEach-Object Port
@@ -49,12 +49,20 @@ try {
         if (Test-Path $err) { Get-Content $err -Tail 80 }
         throw 'Servidor R22 nao respondeu.'
     }
-    Write-Host "PASS    R22 online em $base" -ForegroundColor Green
+    Write-Host "PASS    R22.1 online em $base" -ForegroundColor Green
 
     $prod = Invoke-RestMethod "$base/api/r22/state" -TimeoutSec 5
     if ($prod.app -ne '8ito-a4-studio-r22-production') { throw "app id inesperado: $($prod.app)" }
+    if ($prod.revision -ne 'R22.1') { throw "revision inesperada: $($prod.revision)" }
     if ($prod.restorePolicy.automaticBackupBeforeRestore -ne $true) { throw 'restorePolicy sem backup automatico' }
+    if ($prod.assetPolicy.deleteEnabled -ne $false) { throw 'assetPolicy deveria bloquear delete' }
     Write-Host "PASS    state: $($prod.project.products) produtos / $($prod.project.images) imagens" -ForegroundColor Green
+
+    $assets = Invoke-RestMethod "$base/api/assets?limit=900" -TimeoutSec 15
+    if ($null -eq $assets.assets -or $null -eq $assets.summary) { throw 'endpoint assets invalido' }
+    if ([int]$assets.summary.total -lt [int]$prod.project.images) { throw 'inventario de assets menor que imagens ativas' }
+    if ($assets.policy.deleteEnabled -ne $false) { throw 'biblioteca de assets nao esta read-only' }
+    Write-Host "PASS    asset inventory: $($assets.summary.total) arquivos / $($assets.summary.used) referenciados / $($assets.summary.orphan) orfaos" -ForegroundColor Green
 
     $snaps = Invoke-RestMethod "$base/api/snapshots" -TimeoutSec 5
     if ($null -eq $snaps.snapshots) { throw 'endpoint snapshots invalido' }
@@ -69,6 +77,16 @@ try {
     if (@($project2.products).Count -ne @($project.products).Count) { throw 'roundtrip alterou quantidade de produtos' }
     Write-Host 'PASS    save -> reload roundtrip sem perda de produtos' -ForegroundColor Green
 
+    if (@($snaps.snapshots).Count -gt 0) {
+        $snapshotId = @($snaps.snapshots)[0].id
+        $compareBody = @{ id = $snapshotId; project = $project } | ConvertTo-Json -Depth 100
+        $comparison = Invoke-RestMethod "$base/api/snapshot/compare" -Method Post -ContentType 'application/json; charset=utf-8' -Body $compareBody -TimeoutSec 15
+        if (-not $comparison.ok -or $null -eq $comparison.diff.summary) { throw 'snapshot compare invalido' }
+        Write-Host "PASS    snapshot compare API ($snapshotId)" -ForegroundColor Green
+    } else {
+        Write-Host 'PASS    snapshot compare API pronta (sem criar snapshot de teste)' -ForegroundColor Green
+    }
+
     $refused = $false
     try {
         Invoke-WebRequest "$base/api/restore-original" -Method Post -UseBasicParsing -ContentType 'application/json' -Body '{"confirm":"NAO"}' -TimeoutSec 5 | Out-Null
@@ -79,13 +97,13 @@ try {
     Write-Host 'PASS    restore original protegido por confirmacao' -ForegroundColor Green
 
     $index = Get-Content (Join-Path $root 'index.html') -Raw
-    foreach ($needle in @('studio-r22-production.css','studio-r22-production.js','studio-r22-safety.js')) {
+    foreach ($needle in @('studio-r22-production.css','studio-r22-production.js','studio-r22-safety.js','studio-r22-workspace.css','studio-r22-workspace.js')) {
         if ($index -notmatch [regex]::Escape($needle)) { throw "index nao carrega $needle" }
     }
-    Write-Host 'PASS    index carrega camada R22 completa' -ForegroundColor Green
+    Write-Host 'PASS    index carrega R22.1 completo' -ForegroundColor Green
 
     Write-Host ''
-    Write-Host 'R22 SMOKE = PASS' -ForegroundColor Green
+    Write-Host 'R22.1 SMOKE = PASS' -ForegroundColor Green
     Write-Host 'Obs.: geracao ComfyUI nao foi executada neste smoke test para nao gastar GPU.' -ForegroundColor DarkGray
 }
 finally {
