@@ -2,16 +2,17 @@ $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
+$serverR22 = Join-Path $root 'server_r22.py'
 $serverR4 = Join-Path $root 'server_r4.py'
 $serverR3 = Join-Path $root 'server_r3.py'
 $serverBase = Join-Path $root 'server.py'
-$server = if (Test-Path -LiteralPath $serverR4 -PathType Leaf) { $serverR4 } elseif (Test-Path -LiteralPath $serverR3 -PathType Leaf) { $serverR3 } else { $serverBase }
+$server = if (Test-Path -LiteralPath $serverR22 -PathType Leaf) { $serverR22 } elseif (Test-Path -LiteralPath $serverR4 -PathType Leaf) { $serverR4 } elseif (Test-Path -LiteralPath $serverR3 -PathType Leaf) { $serverR3 } else { $serverBase }
 $logs = Join-Path $root 'logs'
 New-Item -ItemType Directory -Path $logs -Force | Out-Null
 
 Write-Host '============================================================' -ForegroundColor DarkGreen
-Write-Host ' 8ITO A4 STUDIO 0001 R4' -ForegroundColor Green
-Write-Host ' A4 editavel + PDF + referencias + Ollama + ComfyUI local' -ForegroundColor DarkGray
+Write-Host ' 8ITO A4 STUDIO 0001 R22' -ForegroundColor Green
+Write-Host ' A4 editavel + snapshots + restore seguro + IA por candidatos' -ForegroundColor DarkGray
 Write-Host '============================================================' -ForegroundColor DarkGreen
 
 if (-not (Test-Path -LiteralPath $server -PathType Leaf)) {
@@ -48,8 +49,8 @@ if (-not (Test-Comfy)) {
     )
     if ((Test-Path -LiteralPath $comfyMain -PathType Leaf) -and $comfyPython) {
         Write-Host 'START   ComfyUI local --lowvram' -ForegroundColor Cyan
-        $cout = Join-Path $logs 'comfyui-r4-stdout.log'
-        $cerr = Join-Path $logs 'comfyui-r4-stderr.log'
+        $cout = Join-Path $logs 'comfyui-r22-stdout.log'
+        $cerr = Join-Path $logs 'comfyui-r22-stderr.log'
         Start-Process -FilePath $comfyPython -ArgumentList @('-u',$comfyMain,'--listen','127.0.0.1','--port','8188','--lowvram') -WorkingDirectory $comfyRoot -WindowStyle Hidden -RedirectStandardOutput $cout -RedirectStandardError $cerr | Out-Null
         for ($i=0; $i -lt 120; $i++) {
             if (Test-Comfy) { break }
@@ -76,8 +77,8 @@ Write-Host "URL     = $url" -ForegroundColor Cyan
 Write-Host "OLLAMA  = $ollamaDisplay" -ForegroundColor DarkGray
 Write-Host "COMFYUI = $comfyDisplay" -ForegroundColor DarkGray
 
-$appOut = Join-Path $logs '8ito-r4-stdout.log'
-$appErr = Join-Path $logs '8ito-r4-stderr.log'
+$appOut = Join-Path $logs '8ito-r22-stdout.log'
+$appErr = Join-Path $logs '8ito-r22-stderr.log'
 $proc = Start-Process -FilePath $python -ArgumentList $args -WorkingDirectory $root -PassThru -WindowStyle Hidden -RedirectStandardOutput $appOut -RedirectStandardError $appErr
 
 $ready = $false
@@ -87,7 +88,7 @@ for ($i = 0; $i -lt 80; $i++) {
     if ($proc.HasExited) { break }
     try {
         $health = Invoke-RestMethod -Uri ($url + 'api/health') -TimeoutSec 2
-        if ($health.app -match '^8ito-a4-studio-0001') { $ready = $true; break }
+        if ($health.app -match '^8ito-a4-studio') { $ready = $true; break }
     } catch {}
 }
 
