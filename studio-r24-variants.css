@@ -1,0 +1,98 @@
+/* R24 visual study variants. Presentation only: products, prices, images and A4 geometry remain untouched. */
+
+/* A · Quiet luxury */
+.r19.r23.r24-quiet{--r24-gold:#d9b66f;--r24-cream:#f8f1e4}
+.r19.r23.r24-quiet .menu-inner{padding:1.58% 2.08% 1.42%!important;gap:.96%!important}
+.r19.r23.r24-quiet .menu-logo{font-size:43px!important;font-weight:500!important;letter-spacing:.105em!important}
+.r19.r23.r24-quiet .menu-tagline{opacity:.74!important;letter-spacing:.31em!important}
+.r19.r23.r24-quiet .menu-item{grid-template-columns:17.8% minmax(0,1fr)!important;padding:.26% 0!important}
+.r19.r23.r24-quiet .menu-item-image,.r19.r23.r24-quiet .r14-frame,.r19.r23.r24-quiet .beverage-icon{border-color:rgba(217,182,111,.21)!important;box-shadow:none!important;background:rgba(4,37,31,.42)!important}
+.r19.r23.r24-quiet .menu-item-image img,.r19.r23.r24-quiet .r14-frame img,.r19.r23.r24-quiet .beverage-icon img{padding:4.4%!important;filter:none!important}
+.r19.r23.r24-quiet .menu-item-name{font-size:13px!important;color:var(--r24-cream)!important;font-weight:500!important}
+.r19.r23.r24-quiet .menu-item-price{font-size:12.7px!important;color:#ead39f!important;font-weight:600!important}
+.r19.r23.r24-quiet .menu-item-leader{border-bottom-style:solid!important;border-bottom-color:rgba(217,182,111,.18)!important}
+.r19.r23.r24-quiet .r19-kicker{font-size:9.8px!important;letter-spacing:.23em!important}
+.r19.r23.r24-quiet .r14-pizza-band,.r19.r23.r24-quiet .beverage-section{background:transparent!important;border-top-color:rgba(217,182,111,.34)!important;border-bottom-color:rgba(217,182,111,.18)!important}
+.r19.r23.r24-quiet .r14-pizza-card .r14-frame{max-width:101px!important}
+.r19.r23.r24-quiet .beverage-icon{max-width:98px!important;width:73%!important}
+.r19.r23.r24-quiet .promo-section{background:rgba(8,46,38,.17)!important;border-color:rgba(217,182,111,.43)!important}
+.r19.r23.r24-quiet .promo-card{border-right-color:rgba(217,182,111,.14)!important}
+.r19.r23.r24-quiet .menu-footer{opacity:.78!important}
+
+/* B · Gastronomic gallery */
+.r19.r23.r24-gallery .menu-inner{padding:1.50% 1.95% 1.36%!important;gap:.86%!important}
+.r19.r23.r24-gallery .menu-header{padding-bottom:.05%!important}
+.r19.r23.r24-gallery .menu-logo{font-size:41px!important}
+.r19.r23.r24-gallery .menu-columns{gap:3.25%!important}
+.r19.r23.r24-gallery .menu-item{grid-template-columns:19.2% minmax(0,1fr)!important;gap:2.15%!important;padding:.18% 0!important}
+.r19.r23.r24-gallery .menu-item-image{aspect-ratio:1.20/1!important}
+.r19.r23.r24-gallery .menu-item-image img{padding:3.2%!important}
+.r19.r23.r24-gallery .menu-item-name{font-size:12.25px!important}
+.r19.r23.r24-gallery .menu-item-price{font-size:12.3px!important}
+.r19.r23.r24-gallery .r19-heading{margin-bottom:.42%!important}
+.r19.r23.r24-gallery .r14-pizza-band{padding:.58% 1.1% .64%!important}
+.r19.r23.r24-gallery .r14-pizza-card .r14-frame{max-width:110px!important}
+.r19.r23.r24-gallery .beverage-section{padding:.55% 1% .68%!important}
+.r19.r23.r24-gallery .beverage-icon{width:78%!important;max-width:104px!important}
+.r19.r23.r24-gallery .promo-section{padding:.56% .9% .68%!important}
+.r19.r23.r24-gallery .promo-card{grid-template-columns:43% minmax(0,1fr)!important;gap:5.5%!important}
+.r19.r23.r24-gallery .promo-card .promo-thumb{aspect-ratio:1.24/1!important}
+.r19.r23.r24-gallery .menu-footer{min-height:15px!important}
+
+/* C · Classic editorial */
+.r19.r23.r24-classic .menu-inner{padding:1.7% 2.12% 1.52%!important;gap:1.04%!important}
+.r19.r23.r24-classic .menu-logo{font-size:44px!important;letter-spacing:.09em!important}
+.r19.r23.r24-classic .r19-brand-rule{width:38%!important}
+.r19.r23.r24-classic .r19-kicker{font-size:10.2px!important;letter-spacing:.25em!important}
+.r19.r23.r24-classic .r19-rule{height:.7px!important;background:rgba(216,180,109,.42)!important}
+.r19.r23.r24-classic .menu-item{grid-template-columns:16.4% minmax(0,1fr)!important;padding:.29% 0!important}
+.r19.r23.r24-classic .menu-item-image{border-radius:0!important;border-color:rgba(216,180,109,.28)!important}
+.r19.r23.r24-classic .menu-item-name{font-size:13.05px!important}
+.r19.r23.r24-classic .menu-item-price{font-size:12.8px!important}
+.r19.r23.r24-classic .r14-pizza-band,.r19.r23.r24-classic .beverage-section{border-top-width:.8px!important;border-bottom-width:.8px!important}
+.r19.r23.r24-classic .r14-pizza-card .r14-frame,.r19.r23.r24-classic .beverage-icon{border-radius:0!important}
+.r19.r23.r24-classic .promo-section{border-radius:0!important;border-width:.8px!important}
+.r19.r23.r24-classic .promo-card .promo-thumb{border-radius:0!important}
+.r19.r23.r24-classic .menu-footer::before,.r19.r23.r24-classic .menu-footer::after{height:.7px!important;width:15%!important}
+
+/* D · Atelier editorial: selected hybrid after visual comparison.
+   More food presence than R23, quieter framing than Gallery, and stronger reading rhythm. */
+.r19.r23.r24-final{--r24-gold:#d9b66f;--r24-cream:#f8f1e5;--r24-hair:rgba(217,182,111,.24)}
+.r19.r23.r24-final .menu-inner{padding:1.53% 2.02% 1.38%!important;gap:.90%!important;align-content:space-between!important}
+.r19.r23.r24-final .menu-header{padding:.05% 0 .12%!important}
+.r19.r23.r24-final .menu-logo{font-size:43px!important;font-weight:500!important;letter-spacing:.10em!important}
+.r19.r23.r24-final .menu-tagline{font-size:8.35px!important;letter-spacing:.30em!important;opacity:.76!important;margin-top:.38%!important}
+.r19.r23.r24-final .r19-brand-rule{width:40%!important;margin-top:.7%!important}
+.r19.r23.r24-final .menu-columns{gap:3.30%!important;padding-bottom:.25%!important}
+.r19.r23.r24-final .menu-stack{gap:.40%!important}
+.r19.r23.r24-final .menu-item{grid-template-columns:18.55% minmax(0,1fr)!important;gap:2.2%!important;padding:.205% 0!important;border-bottom-color:rgba(217,182,111,.09)!important}
+.r19.r23.r24-final .menu-item-image{aspect-ratio:1.24/1!important;border-radius:1px!important;border-color:rgba(217,182,111,.22)!important;box-shadow:none!important;background:rgba(4,38,31,.38)!important}
+.r19.r23.r24-final .menu-item-image img{padding:3.8%!important;filter:none!important}
+.r19.r23.r24-final .menu-item-name{font-size:12.75px!important;line-height:1.17!important;font-weight:500!important;color:var(--r24-cream)!important}
+.r19.r23.r24-final .menu-item-price{font-size:12.55px!important;font-weight:600!important;color:#ead29d!important}
+.r19.r23.r24-final .menu-item-leader{border-bottom-style:solid!important;border-bottom-color:rgba(217,182,111,.16)!important}
+.r19.r23.r24-final .r19-heading{margin-bottom:.48%!important;gap:.46em!important}
+.r19.r23.r24-final .r19-kicker{font-size:9.9px!important;letter-spacing:.235em!important}
+.r19.r23.r24-final .r19-loz{width:5.7px!important;height:5.7px!important;flex-basis:5.7px!important}
+.r19.r23.r24-final #leftMenuColumn::after{font-size:34px!important;color:rgba(217,182,111,.095)!important;bottom:2.2%!important}
+.r19.r23.r24-final .r14-pizza-band,.r19.r23.r24-final .beverage-section{background:transparent!important;border-top:.65px solid rgba(217,182,111,.35)!important;border-bottom:.65px solid rgba(217,182,111,.19)!important}
+.r19.r23.r24-final .r14-pizza-band{padding:.62% 1.18% .68%!important}
+.r19.r23.r24-final .r14-pizza-grid{gap:2.2%!important}
+.r19.r23.r24-final .r14-pizza-card .r14-frame{max-width:106px!important;border-radius:1px!important;border-color:rgba(217,182,111,.24)!important;box-shadow:none!important;background:rgba(4,38,31,.36)!important}
+.r19.r23.r24-final .r14-pizza-card .r14-frame img{padding:3.9%!important;filter:none!important}
+.r19.r23.r24-final .r14-pizza-card strong{font-size:12.35px!important;font-weight:500!important}
+.r19.r23.r24-final .r14-pizza-card span{font-size:12.35px!important;font-weight:600!important}
+.r19.r23.r24-final .beverage-section{padding:.62% 1.05% .74%!important}
+.r19.r23.r24-final .beverage-icon{width:75%!important;max-width:101px!important;border-radius:1px!important;border-color:rgba(217,182,111,.22)!important;box-shadow:none!important;background:rgba(4,38,31,.34)!important}
+.r19.r23.r24-final .beverage-icon img{padding:3.8%!important;filter:none!important}
+.r19.r23.r24-final .beverage-card strong{font-size:12.15px!important;font-weight:500!important}
+.r19.r23.r24-final .beverage-card span{font-size:12.25px!important;font-weight:600!important}
+.r19.r23.r24-final .beverage-card:not(:last-child)::after{background:rgba(217,182,111,.42)!important;width:5px!important;height:5px!important}
+.r19.r23.r24-final .promo-section{padding:.62% .95% .72%!important;border:.65px solid rgba(217,182,111,.42)!important;border-radius:2px!important;background:rgba(8,46,38,.15)!important}
+.r19.r23.r24-final .promo-grid{gap:1.45%!important}
+.r19.r23.r24-final .promo-card{grid-template-columns:41% minmax(0,1fr)!important;gap:6%!important;padding:.10% 2.8% .10% 0!important;border-right-color:rgba(217,182,111,.14)!important}
+.r19.r23.r24-final .promo-card .promo-thumb{aspect-ratio:1.28/1!important;border-radius:2px!important;border-color:rgba(217,182,111,.22)!important;box-shadow:none!important}
+.r19.r23.r24-final .promo-card strong{font-size:11.95px!important;font-weight:500!important;line-height:1.17!important}
+.r19.r23.r24-final .promo-price{font-size:12.25px!important;font-weight:600!important;border-bottom-color:rgba(217,182,111,.72)!important}
+.r19.r23.r24-final .menu-footer{min-height:16px!important;font-size:8.45px!important;letter-spacing:.115em!important;opacity:.78!important}
+.r19.r23.r24-final .menu-footer::before,.r19.r23.r24-final .menu-footer::after{width:14%!important;background:rgba(217,182,111,.30)!important}
