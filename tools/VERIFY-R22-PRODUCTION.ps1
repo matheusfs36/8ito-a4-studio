@@ -9,7 +9,7 @@ if (-not $python) { throw 'Python nao encontrado.' }
 if (-not (Test-Path -LiteralPath $server -PathType Leaf)) { throw "server_r223.py ausente: $server" }
 
 Write-Host '============================================================' -ForegroundColor DarkGreen
-Write-Host ' 8ITO R23 EDITORIAL + R22.3 PRODUCTION - SMOKE TEST' -ForegroundColor Green
+Write-Host ' 8ITO R24 ATELIER EDITORIAL + R22.3 PRODUCTION - SMOKE TEST' -ForegroundColor Green
 Write-Host '============================================================' -ForegroundColor DarkGreen
 
 Write-Host 'CHECK   Python syntax' -ForegroundColor Cyan
@@ -20,14 +20,15 @@ Write-Host 'PASS    server_r223.py compila' -ForegroundColor Green
 foreach ($file in @(
     'server_r22.py','server_r222.py','server_r223.py',
     'studio-r23-editorial-fill.js','studio-r23-editorial-fill.css',
+    'studio-r24-final.js','studio-r24-final.css',
     'studio-r22-production.js','studio-r22-production.css','studio-r22-safety.js',
     'studio-r22-workspace.js','studio-r22-workspace.css',
     'studio-r22-preflight.js','studio-r22-preflight.css',
     'studio-r22-release.js','studio-r22-release.css','index.html'
 )) {
-    if (-not (Test-Path -LiteralPath (Join-Path $root $file) -PathType Leaf)) { throw "Arquivo R23/R22.3 ausente: $file" }
+    if (-not (Test-Path -LiteralPath (Join-Path $root $file) -PathType Leaf)) { throw "Arquivo R24/R22.3 ausente: $file" }
 }
-Write-Host 'PASS    arquivos R23 editorial + R22.3 production presentes' -ForegroundColor Green
+Write-Host 'PASS    arquivos R24 editorial + R22.3 production presentes' -ForegroundColor Green
 
 $port = 8831
 $listeners = [System.Net.NetworkInformation.IPGlobalProperties]::GetIPGlobalProperties().GetActiveTcpListeners() | ForEach-Object Port
@@ -36,8 +37,8 @@ if ($listeners -contains $port) { throw 'Sem porta livre para smoke test.' }
 
 $logs = Join-Path $root 'logs'
 New-Item -ItemType Directory -Path $logs -Force | Out-Null
-$out = Join-Path $logs 'r23-smoke-stdout.log'
-$err = Join-Path $logs 'r23-smoke-stderr.log'
+$out = Join-Path $logs 'r24-smoke-stdout.log'
+$err = Join-Path $logs 'r24-smoke-stderr.log'
 $proc = Start-Process -FilePath $python -ArgumentList @('-u',$server,'--host','127.0.0.1','--port',"$port") -WorkingDirectory $root -PassThru -WindowStyle Hidden -RedirectStandardOutput $out -RedirectStandardError $err
 $base = "http://127.0.0.1:$port"
 
@@ -151,6 +152,7 @@ try {
     $index = Get-Content (Join-Path $root 'index.html') -Raw
     foreach ($needle in @(
         'studio-r23-editorial-fill.css','studio-r23-editorial-fill.js',
+        'studio-r24-final.css','studio-r24-final.js',
         'studio-r22-production.css','studio-r22-production.js','studio-r22-safety.js',
         'studio-r22-workspace.css','studio-r22-workspace.js',
         'studio-r22-preflight.css','studio-r22-preflight.js',
@@ -158,10 +160,10 @@ try {
     )) {
         if ($index -notmatch [regex]::Escape($needle)) { throw "index nao carrega $needle" }
     }
-    Write-Host 'PASS    index carrega R23 editorial + R22.3 production completo' -ForegroundColor Green
+    Write-Host 'PASS    index carrega R24 Atelier + R22.3 production completo' -ForegroundColor Green
 
     Write-Host ''
-    Write-Host 'R23 + R22.3 SMOKE = PASS' -ForegroundColor Green
+    Write-Host 'R24 ATELIER + R22.3 SMOKE = PASS' -ForegroundColor Green
     Write-Host 'Obs.: o smoke nao gera downloads. As provas reais PNG/JPG/PDF continuam no painel Release R22.3.' -ForegroundColor DarkGray
 }
 finally {
