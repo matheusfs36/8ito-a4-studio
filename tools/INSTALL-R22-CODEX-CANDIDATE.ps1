@@ -39,6 +39,8 @@ $files = @(
     'studio-r22-production.css',
     'studio-r22-production.js',
     'studio-r22-safety.js',
+    'studio-r22-workspace.css',
+    'studio-r22-workspace.js',
     'tools/VERIFY-R22-PRODUCTION.ps1'
 )
 
@@ -54,7 +56,7 @@ foreach ($rel in $files) {
 }
 Write-Host "PASS  BACKUP = $Backup" -ForegroundColor Green
 
-Step '3. APLICAR SOMENTE A CAMADA R22'
+Step '3. APLICAR SOMENTE A CAMADA R22.1'
 foreach ($rel in $files) {
     $dst = Join-Path $LabRoot ($rel -replace '/', '\')
     Write-Host "FETCH $rel" -ForegroundColor DarkGray
@@ -67,19 +69,19 @@ $verify = Join-Path $LabRoot 'tools\VERIFY-R22-PRODUCTION.ps1'
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File $verify
 if ($LASTEXITCODE -ne 0) {
     Write-Host ''
-    Write-Host 'SMOKE FALHOU. R22 NAO SERA ABERTO AUTOMATICAMENTE.' -ForegroundColor Red
+    Write-Host 'SMOKE FALHOU. R22.1 NAO SERA ABERTO AUTOMATICAMENTE.' -ForegroundColor Red
     Write-Host "Backup para rollback: $Backup" -ForegroundColor Yellow
     exit $LASTEXITCODE
 }
 
-Step '5. ABRIR CANDIDATO R22'
+Step '5. ABRIR CANDIDATO R22.1'
 $launcher = Join-Path $LabRoot 'Run-8ITO-A4-Studio-0001.ps1'
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File $launcher
-if ($LASTEXITCODE -ne 0) { throw "Launcher R22 terminou com EXIT CODE $LASTEXITCODE" }
+if ($LASTEXITCODE -ne 0) { throw "Launcher R22.1 terminou com EXIT CODE $LASTEXITCODE" }
 
 Write-Host ''
 Write-Host '============================================================' -ForegroundColor DarkGreen
-Write-Host ' R22 CODEX CANDIDATE INSTALADO + SMOKE PASS' -ForegroundColor Green
+Write-Host ' R22.1 CODEX CANDIDATE INSTALADO + SMOKE PASS' -ForegroundColor Green
 Write-Host '============================================================' -ForegroundColor DarkGreen
 Write-Host "Backup: $Backup" -ForegroundColor DarkGray
 Write-Host 'Main do GitHub nao foi alterada; o trabalho continua no PR draft #1.' -ForegroundColor Cyan
