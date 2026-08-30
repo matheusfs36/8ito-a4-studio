@@ -31,8 +31,12 @@ await page.evaluate(async () => {
 await page.waitForTimeout(500);
 
 const menu = page.locator('#menuPage');
-await menu.screenshot({ path: path.join(outDir, 'a4.png') });
+await menu.screenshot({ path: path.join(outDir, 'a4-preview.png') });
 await page.screenshot({ path: path.join(outDir, 'workspace.png'), fullPage: true });
+await page.evaluate(() => document.getElementById('menuPage')?.classList.add('r14-exporting'));
+await page.waitForTimeout(100);
+await menu.screenshot({ path: path.join(outDir, 'a4-export-mode.png') });
+await page.evaluate(() => document.getElementById('menuPage')?.classList.remove('r14-exporting'));
 
 const metrics = await page.evaluate(() => {
   const rect = el => {
@@ -78,6 +82,7 @@ const metrics = await page.evaluate(() => {
     pageOverflow: inner && page ? { vertical: inner.scrollHeight > inner.clientHeight + 1, horizontal: inner.scrollWidth > inner.clientWidth + 1, innerScrollHeight: inner.scrollHeight, innerClientHeight: inner.clientHeight } : null,
     bodyClasses: document.body.className,
     menuClasses: page?.className || '',
+    safeGuideDisplay: getComputedStyle(document.querySelector('.safe-guide')).display,
   };
 });
 metrics.consoleErrors = consoleErrors;
