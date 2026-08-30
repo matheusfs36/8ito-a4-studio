@@ -10,6 +10,7 @@ const variants = [
   { id: 'r24-quiet', cls: 'r24-quiet' },
   { id: 'r24-gallery', cls: 'r24-gallery' },
   { id: 'r24-classic', cls: 'r24-classic' },
+  { id: 'r24-final', cls: 'r24-final' },
 ];
 
 const browser = await chromium.launch({ headless: true });
@@ -33,7 +34,7 @@ const results = [];
 for (const variant of variants) {
   await page.evaluate(({ cls }) => {
     const menu = document.querySelector('#menuPage');
-    menu.classList.remove('r24-quiet','r24-gallery','r24-classic');
+    menu.classList.remove('r24-quiet','r24-gallery','r24-classic','r24-final');
     if (cls) menu.classList.add(cls);
     menu.classList.add('r14-exporting');
     document.querySelector('.safe-guide')?.style.setProperty('display','none','important');
