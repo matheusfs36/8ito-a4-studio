@@ -15,6 +15,7 @@ ROOT = core.ROOT
 SNAPSHOT_DIR = ROOT / "snapshots"
 SNAPSHOT_DIR.mkdir(parents=True, exist_ok=True)
 APP_ID = "8ito-a4-studio-r22-production"
+ASSET_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp"}
 
 
 def _safe_slug(value: str) -> str:
@@ -30,6 +31,88 @@ def _project_hash(project: dict[str, Any]) -> str:
 def _snapshot_paths(snapshot_id: str) -> tuple[Path, Path]:
     folder = SNAPSHOT_DIR / snapshot_id
     return folder / "project.json", folder / "meta.json"
+
+
+def _normalise_asset_ref(value: Any) -> str:
+    ref = str(value or "").strip().replace("\\", "/")
+    if ref.startswith("./"):
+        ref = ref[2:]
+    if ref.startswith("/"):
+        ref = ref[1:]
+    return ref
+
+
+def _product_asset_refs(product: dict[str, Any]) -> set[str]:
+    refs: set[str] = set()
+
+    def add(value: Any) -> None:
+        ref = _normalise_asset_ref(value)
+        if ref.startswith("assets/"):
+            refs.add(ref)
+
+    add(product.get("image"))
+    for value in product.get("imageHistory") or []:
+        add(value)
+    for item in product.get("candidates") or []:
+        if isinstance(item, dict):
+            add(item.get("url"))
+    ai = product.get("ai")
+    if isinstance(ai, dict):
+        for item in ai.get("candidatesR22") or []:
+            if isinstance(item, dict):
+                add(item.get("url"))
+    return refs
+
+
+def asset_inventory(project: dict[str, Any] | None = None, limit: int = 600) -> dict[str, Any]:
+    if project is None:
+        loaded = core.load_project()
+        project = loaded if isinstance(loaded, dict) else {}
+    products = project.get("products", []) if isinstance(project.get("products"), list) else []
+    usage: dict[str, list[dict[str, str]]] = {}
+    for product in products:
+        if not isinstance(product, dict):
+            continue
+        marker = {"id": str(product.get("id") or ""), "name": str(product.get("name") or "Produto")}
+        for ref in _product_asset_refs(product):
+            usage.setdefault(ref, []).append(marker)
+
+    items: list[dict[str, Any]] = []
+    if core.ASSET_DIR.exists():
+        for path in core.ASSET_DIR.rglob("*"):
+            if not path.is_file() or path.suffix.lower() not in ASSET_EXTENSIONS:
+                continue
+            try:
+                rel = path.relative_to(ROOT).as_posix()
+                stat = path.stat()
+            except (OSError, ValueError):
+                continue
+            parts = Path(rel).parts
+            group = parts[1] if len(parts) > 2 and parts[0] == "assets" else "assets"
+            used_by = usage.get(rel, [])
+            items.append({
+                "url": rel,
+                "name": path.name,
+                "group": group,
+                "bytes": stat.st_size,
+                "modifiedAt": time.strftime("%Y-%m-%dT%H:%M:%S%z", time.localtime(stat.st_mtime)),
+                "usageCount": len(used_by),
+                "usedBy": used_by,
+                "orphan": not bool(used_by),
+                "mtime": stat.st_mtime,
+            })
+    items.sort(key=lambda item: (item["orphan"], -float(item["mtime"])))
+    total = len(items)
+    used = sum(1 for item in items if not item["orphan"])
+    orphan = total - used
+    visible = items[: max(1, min(2000, int(limit or 600)))]
+    for item in visible:
+        item.pop("mtime", None)
+    return {
+        "assets": visible,
+        "summary": {"total": total, "used": used, "orphan": orphan, "returned": len(visible)},
+        "policy": {"deleteEnabled": False, "applyRequiresExplicitChoice": True},
+    }
 
 
 def list_snapshots() -> list[dict[str, Any]]:
@@ -136,12 +219,76 @@ def load_snapshot(snapshot_id: str) -> dict[str, Any]:
     return project
 
 
+def compare_projects(before: dict[str, Any], after: dict[str, Any]) -> dict[str, Any]:
+    fields = ("name", "price", "category", "active", "image", "description")
+    before_products = {
+        str(p.get("id")): p for p in before.get("products", []) if isinstance(p, dict) and p.get("id") is not None
+    }
+    after_products = {
+        str(p.get("id")): p for p in after.get("products", []) if isinstance(p, dict) and p.get("id") is not None
+    }
+    added: list[dict[str, Any]] = []
+    removed: list[dict[str, Any]] = []
+    changed: list[dict[str, Any]] = []
+
+    for product_id in sorted(after_products.keys() - before_products.keys()):
+        product = after_products[product_id]
+        added.append({"id": product_id, "name": str(product.get("name") or product_id)})
+    for product_id in sorted(before_products.keys() - after_products.keys()):
+        product = before_products[product_id]
+        removed.append({"id": product_id, "name": str(product.get("name") or product_id)})
+    for product_id in sorted(before_products.keys() & after_products.keys()):
+        old = before_products[product_id]
+        new = after_products[product_id]
+        delta: dict[str, Any] = {}
+        for field in fields:
+            if old.get(field) != new.get(field):
+                delta[field] = {"before": old.get(field), "after": new.get(field)}
+        old_present = {
+            key: old.get(key) for key in ("imageFit", "imageMask", "imageScale", "imageOffsetX", "imageOffsetY")
+        }
+        new_present = {
+            key: new.get(key) for key in ("imageFit", "imageMask", "imageScale", "imageOffsetX", "imageOffsetY")
+        }
+        if old_present != new_present:
+            delta["imagePresentation"] = {"before": old_present, "after": new_present}
+        if delta:
+            changed.append({
+                "id": product_id,
+                "name": str(new.get("name") or old.get("name") or product_id),
+                "fields": list(delta.keys()),
+                "changes": delta,
+            })
+
+    document_changes: list[str] = []
+    for key in ("brand", "categories", "categoryOrder", "textStyles"):
+        if before.get(key) != after.get(key):
+            document_changes.append(key)
+
+    return {
+        "summary": {
+            "added": len(added),
+            "removed": len(removed),
+            "changed": len(changed),
+            "documentChanged": bool(document_changes),
+            "same": not (added or removed or changed or document_changes),
+        },
+        "added": added,
+        "removed": removed,
+        "changed": changed,
+        "documentChanges": document_changes,
+        "beforeHash": _project_hash(before),
+        "afterHash": _project_hash(after),
+    }
+
+
 def production_state() -> dict[str, Any]:
     project = core.load_project()
     products = project.get("products", []) if isinstance(project, dict) and isinstance(project.get("products"), list) else []
     snaps = list_snapshots()
     return {
         "app": APP_ID,
+        "revision": "R22.1",
         "project": {
             "products": len(products),
             "images": sum(1 for p in products if isinstance(p, dict) and str(p.get("image") or "").strip()),
@@ -155,19 +302,28 @@ def production_state() -> dict[str, Any]:
             "automaticBackupBeforeRestore": True,
             "originalRestorePersistsByDefault": False,
         },
+        "assetPolicy": {"inventoryReadOnly": True, "deleteEnabled": False},
     }
 
 
 class Handler(r4.Handler):
-    server_version = "8itoA4Studio/R22"
+    server_version = "8itoA4Studio/R22.1"
 
     def do_GET(self) -> None:  # noqa: N802
-        route = r4.r3.urllib.parse.urlparse(self.path).path
+        parsed = r4.r3.urllib.parse.urlparse(self.path)
+        route = parsed.path
         try:
             if route == "/api/r22/state":
                 return self.send_json(production_state())
             if route == "/api/snapshots":
                 return self.send_json({"snapshots": list_snapshots()})
+            if route == "/api/assets":
+                query = r4.r3.urllib.parse.parse_qs(parsed.query)
+                try:
+                    limit = int((query.get("limit") or ["600"])[0])
+                except ValueError:
+                    limit = 600
+                return self.send_json(asset_inventory(limit=limit))
         except FileNotFoundError as exc:
             return self.send_json({"error": str(exc)}, 404)
         except Exception as exc:
@@ -208,6 +364,17 @@ class Handler(r4.Handler):
                     "manual",
                 )
                 return self.send_json({"ok": True, "snapshot": snap})
+
+            if route == "/api/snapshot/compare":
+                payload = self.read_payload()
+                snapshot_id = str(payload.get("id") or "")
+                before = load_snapshot(snapshot_id)
+                after = payload.get("project")
+                if after is None:
+                    after = core.load_project()
+                if not isinstance(after, dict):
+                    raise ValueError("project atual inválido")
+                return self.send_json({"ok": True, "id": snapshot_id, "diff": compare_projects(before, after)})
 
             if route == "/api/snapshot/restore":
                 payload = self.read_payload()
@@ -252,8 +419,8 @@ def main() -> None:
     parser.add_argument("--port", type=int, default=8794)
     args = parser.parse_args()
     httpd = core.ThreadingHTTPServer((args.host, args.port), Handler)
-    print(f"8ITO A4 Studio R22 Production -> http://{args.host}:{args.port}/")
-    print("State safety: snapshots + explicit restore + automatic backups")
+    print(f"8ITO A4 Studio R22.1 Production -> http://{args.host}:{args.port}/")
+    print("State safety: snapshots + compare + asset inventory + explicit restore")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
