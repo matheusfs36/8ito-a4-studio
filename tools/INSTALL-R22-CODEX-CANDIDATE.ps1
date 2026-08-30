@@ -8,7 +8,7 @@ Set-StrictMode -Version Latest
 $Repo = 'matheusfs36/8ito-a4-studio'
 $Ref = 'codex/r22-production-hardening'
 $Stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
-$Backup = "C:\tdz-os\backups\8ito-r23-codex-pre-$Stamp"
+$Backup = "C:\tdz-os\backups\8ito-r24-codex-pre-$Stamp"
 
 function Step([string]$Text) {
     Write-Host ''
@@ -40,6 +40,8 @@ $files = @(
     'server_r223.py',
     'studio-r23-editorial-fill.css',
     'studio-r23-editorial-fill.js',
+    'studio-r24-final.css',
+    'studio-r24-final.js',
     'studio-r22-production.css',
     'studio-r22-production.js',
     'studio-r22-safety.js',
@@ -64,7 +66,7 @@ foreach ($rel in $files) {
 }
 Write-Host "PASS  BACKUP = $Backup" -ForegroundColor Green
 
-Step '3. APLICAR R23 EDITORIAL + HARDENING R22.3'
+Step '3. APLICAR R24 ATELIER + HARDENING R22.3'
 foreach ($rel in $files) {
     $dst = Join-Path $LabRoot ($rel -replace '/', '\')
     Write-Host "FETCH $rel" -ForegroundColor DarkGray
@@ -77,7 +79,7 @@ $verify = Join-Path $LabRoot 'tools\VERIFY-R22-PRODUCTION.ps1'
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File $verify
 if ($LASTEXITCODE -ne 0) {
     Write-Host ''
-    Write-Host 'SMOKE FALHOU. R23 NAO SERA ABERTO AUTOMATICAMENTE.' -ForegroundColor Red
+    Write-Host 'SMOKE FALHOU. R24 NAO SERA ABERTO AUTOMATICAMENTE.' -ForegroundColor Red
     Write-Host "Backup para rollback: $Backup" -ForegroundColor Yellow
     exit $LASTEXITCODE
 }
@@ -98,14 +100,14 @@ if (@($old).Count -eq 0) { Write-Host 'PASS   nenhum servidor anterior precisava
 else { Write-Host "PASS   $(@($old).Count) servidor(es) anterior(es) encerrado(s)" -ForegroundColor Green }
 Start-Sleep -Milliseconds 350
 
-Step '6. ABRIR R23 EDITORIAL CANDIDATE'
+Step '6. ABRIR R24 ATELIER EDITORIAL CANDIDATE'
 $launcher = Join-Path $LabRoot 'Run-8ITO-A4-Studio-0001.ps1'
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File $launcher
-if ($LASTEXITCODE -ne 0) { throw "Launcher R23 terminou com EXIT CODE $LASTEXITCODE" }
+if ($LASTEXITCODE -ne 0) { throw "Launcher R24 terminou com EXIT CODE $LASTEXITCODE" }
 
 Write-Host ''
 Write-Host '============================================================' -ForegroundColor DarkGreen
-Write-Host ' R23 EDITORIAL CANDIDATE INSTALADO + SMOKE PASS' -ForegroundColor Green
+Write-Host ' R24 ATELIER EDITORIAL CANDIDATE INSTALADO + SMOKE PASS' -ForegroundColor Green
 Write-Host '============================================================' -ForegroundColor DarkGreen
 Write-Host "Backup: $Backup" -ForegroundColor DarkGray
 Write-Host 'Main do GitHub nao foi alterada; o trabalho continua no PR draft #1.' -ForegroundColor Cyan
