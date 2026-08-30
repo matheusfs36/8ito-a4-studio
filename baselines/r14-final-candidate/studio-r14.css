@@ -1,0 +1,300 @@
+/* 8ito A4 Studio R14 — flow layout + gastronomic polish + asset manager
+   Last visual layer. Preserves A4 210×297 and contain/no-mask image baseline. */
+
+.menu-page.r14{
+  --r14-gold:#d4a85a;
+  --r14-gold-soft:#e6c790;
+  --r14-cream:#f6eee0;
+  --r14-line:rgba(212,168,90,.42);
+  --r14-frame:rgba(212,168,90,.22);
+  --r14-panel:rgba(5,42,35,.72);
+  background:
+    radial-gradient(circle at 50% -6%,rgba(42,98,78,.28),transparent 28%),
+    linear-gradient(180deg,#063029 0%,#032821 48%,#021c18 100%);
+}
+.menu-page.r14 .menu-inner{
+  display:grid!important;
+  grid-template-rows:auto auto auto auto auto auto!important;
+  align-content:start!important;
+  gap:.95%!important;
+  padding:2% 2.15% 1.5%!important;
+  overflow:hidden;
+}
+.r14 .menu-header{padding:.1% 0 .15%!important}
+.r14 .menu-infinity{height:.58em!important;font-size:clamp(26px,4.4vw,52px)!important}
+.r14 .menu-logo{font-size:clamp(28px,4.6vw,52px)!important;letter-spacing:.04em}
+.r14 .menu-tagline{letter-spacing:.34em!important;margin-top:.55%!important;font-size:clamp(7px,.95vw,12px)!important}
+
+.r14 .menu-columns{min-height:min-content!important;height:auto!important;align-items:start!important;gap:3.6%!important;overflow:visible}
+.r14 .menu-stack{gap:.55%!important;min-height:min-content;height:auto;overflow:visible}
+.r14 .menu-section h3,
+.r14 .menu-bottom-section h3,
+.r14 .r14-pizza-band h3{
+  font:700 clamp(11px,1.55vw,20px) Georgia,"Palatino Linotype",serif!important;
+  letter-spacing:.12em!important;
+  color:var(--r14-gold)!important;
+  margin:0 0 .7%!important;
+}
+.r14 .menu-items{display:grid;gap:0}
+
+.r14 .menu-item{
+  display:grid!important;
+  grid-template-columns:15.5% minmax(0,1fr)!important;
+  gap:2.4%!important;
+  min-height:0!important;
+  padding:.32% 0!important;
+  align-items:center!important;
+  border-bottom:1px dotted rgba(212,168,90,.18)!important;
+  cursor:pointer;
+}
+.r14 .menu-item:last-child{border-bottom:0!important}
+.r14 .menu-item.is-selected{
+  outline:1px solid rgba(212,168,90,.45);
+  outline-offset:2px;
+  border-radius:6px;
+  background:rgba(212,168,90,.05);
+}
+.r14 .menu-item-image,
+.r14 .r14-frame{
+  width:100%!important;
+  aspect-ratio:1.28/1!important;
+  height:auto!important;
+  border-radius:7px!important;
+  overflow:hidden!important;
+  background:
+    radial-gradient(circle at 50% 38%,rgba(38,90,72,.38),rgba(4,32,27,.94)),
+    #072820!important;
+  border:1px solid var(--r14-frame)!important;
+  box-shadow:inset 0 0 12px rgba(0,0,0,.14)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.r14 .menu-item-image img,
+.r14 .r14-frame img,
+.r14 .beverage-icon img,
+.r14 .promo-thumb img,
+.r14 .r8-product-img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  padding:5%!important;
+  border-radius:0!important;
+  clip-path:none!important;
+  mask:none!important;
+  -webkit-mask:none!important;
+  transform:none!important;
+  filter:none!important;
+}
+.r14 .menu-item-copy{
+  min-width:0;
+  display:flex;
+  align-items:baseline;
+  gap:7px;
+}
+.r14 .menu-item-name{
+  flex:0 1 auto;
+  max-width:72%;
+  color:var(--r14-cream)!important;
+  font:600 clamp(8px,1.08vw,13.5px) Georgia,serif!important;
+  text-transform:none!important;
+  letter-spacing:.01em!important;
+  line-height:1.12!important;
+  text-wrap:balance;
+}
+.r14 .menu-item-leader{
+  flex:1 1 auto;
+  border-bottom:1px dotted rgba(212,168,90,.38);
+  transform:translateY(-4px);
+  min-width:10px;
+}
+.r14 .menu-item-price{
+  flex:0 0 auto;
+  color:#f3d9a4!important;
+  font:700 clamp(8.5px,1.12vw,14px) Georgia,serif!important;
+  padding:0!important;
+  background:none!important;
+  border:0!important;
+  border-radius:0!important;
+  white-space:nowrap;
+}
+
+.r14-pizza-band{
+  border:1px solid rgba(212,168,90,.55);
+  border-radius:10px;
+  background:linear-gradient(180deg,rgba(8,48,39,.55),rgba(4,34,28,.5));
+  padding:.55% 1.15% .65%;
+  min-width:0;
+}
+.r14-pizza-band h3{text-align:center;margin-bottom:.55%!important}
+.r14-pizza-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.15%}
+.r14-pizza-card{
+  text-align:center;
+  cursor:pointer;
+  min-width:0;
+  padding:0 4%;
+}
+.r14-pizza-card.is-selected{outline:1px solid rgba(212,168,90,.5);border-radius:8px}
+.r14-pizza-card .r14-frame{aspect-ratio:1.12/1!important;margin:0 auto 5%}
+.r14-pizza-card strong,
+.r14-pizza-card span{display:block}
+.r14-pizza-card strong{
+  color:var(--r14-cream);
+  font:600 clamp(7px,.95vw,11.5px) Georgia,serif;
+  line-height:1.1;
+  min-height:2.2em;
+}
+.r14-pizza-card span{color:#f0d6a0;font:700 clamp(8px,1.05vw,13px) Georgia,serif;margin-top:3%}
+
+.r14 .menu-bottom-section{
+  background:linear-gradient(180deg,rgba(8,48,39,.58),rgba(4,34,28,.52))!important;
+  border:1px solid rgba(212,168,90,.58)!important;
+  border-radius:10px!important;
+  padding:.75% 1.2% .85%!important;
+}
+.r14 .menu-bottom-section h3{margin-bottom:.55%!important;justify-content:center}
+.r14 .beverage-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:.4%!important}
+.r14 .beverage-card{
+  text-align:center;
+  padding:0 5%!important;
+  border-right:1px solid rgba(212,168,90,.2)!important;
+  cursor:pointer;
+  min-width:0;
+}
+.r14 .beverage-card:last-child{border-right:0!important}
+.r14 .beverage-card.is-selected{outline:1px solid rgba(212,168,90,.45);border-radius:8px}
+.r14 .beverage-icon{
+  width:58%!important;
+  max-width:78px!important;
+  height:auto!important;
+  aspect-ratio:1.15/1!important;
+  margin:0 auto 4%!important;
+  border-radius:8px!important;
+  overflow:hidden!important;
+  background:rgba(4,32,27,.9)!important;
+  border:1px solid var(--r14-frame)!important;
+  box-shadow:none!important;
+}
+.r14 .beverage-card strong{
+  color:var(--r14-cream);
+  font:600 clamp(7px,.98vw,12px) Georgia,serif!important;
+  line-height:1.1;
+  min-height:2.1em!important;
+}
+.r14 .beverage-card span{
+  color:#f2d79e!important;
+  font:700 clamp(8px,1.08vw,13px) Georgia,serif!important;
+  margin-top:2%!important;
+}
+
+.r14 .promo-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:1.2%!important}
+.r14 .promo-card{
+  display:grid!important;
+  grid-template-columns:36% minmax(0,1fr)!important;
+  gap:7%!important;
+  align-items:center!important;
+  text-align:left!important;
+  padding:0 2% 0 0!important;
+  border-right:1px solid rgba(212,168,90,.28)!important;
+  cursor:pointer;
+  min-width:0;
+}
+.r14 .promo-card:last-child{border-right:0!important}
+.r14 .promo-card.is-selected{outline:1px solid rgba(212,168,90,.45);border-radius:8px}
+.r14 .promo-card .promo-thumb{
+  width:100%!important;
+  max-width:none!important;
+  height:auto!important;
+  aspect-ratio:1.25/1!important;
+  margin:0!important;
+  border-radius:8px!important;
+  overflow:hidden!important;
+  background:rgba(4,32,27,.9)!important;
+  border:1px solid var(--r14-frame)!important;
+}
+.r14 .promo-card strong{
+  color:var(--r14-cream)!important;
+  font:600 clamp(7px,.95vw,11.5px) Georgia,serif!important;
+  text-transform:none!important;
+  line-height:1.12!important;
+  min-height:0!important;
+}
+.r14 .promo-price{
+  display:inline-block;
+  margin-top:6%!important;
+  padding:.15em .55em!important;
+  border-radius:999px!important;
+  background:transparent!important;
+  border:1px solid rgba(212,168,90,.45);
+  color:#f3d9a4!important;
+  font:700 clamp(8px,1.05vw,13px) Georgia,serif!important;
+  box-shadow:none!important;
+}
+
+.r14 .menu-footer{
+  color:#ddc18a!important;
+  letter-spacing:.08em!important;
+  padding-top:.1%!important;
+}
+
+.menu-page.r14.r14-compact .menu-item-name{font-size:clamp(7.4px,.98vw,12px)!important}
+.menu-page.r14.r14-compact .menu-item-image{aspect-ratio:1.28/1!important}
+.menu-page.r14.r14-compact .r14-pizza-card .r14-frame{aspect-ratio:1/1!important}
+.menu-page.r14.r14-overflow{
+  box-shadow:0 0 0 2px rgba(209,139,82,.35),0 18px 50px rgba(0,0,0,.45)!important;
+}
+
+.r14-asset-manager{
+  margin-top:12px;
+  padding:10px;
+  border:1px solid #36534b;
+  border-radius:12px;
+  background:#091512;
+  display:grid;
+  gap:8px;
+}
+.r14-asset-manager h3{margin:0;font-size:13px}
+.r14-asset-origin{font-size:10px;color:#9fd4bf}
+.r14-asset-actions,
+.r14-asset-fit{display:flex;gap:6px;flex-wrap:wrap}
+.r14-gallery{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:7px;
+}
+.r14-gallery:empty{display:none}
+.r14-candidate{
+  border:1px solid #36534b;
+  background:#071411;
+  border-radius:8px;
+  padding:5px;
+  display:grid;
+  gap:5px;
+  cursor:pointer;
+}
+.r14-candidate.active{border-color:#c0924c}
+.r14-candidate img{
+  width:100%;
+  aspect-ratio:1;
+  object-fit:contain;
+  background:#03261f;
+  border-radius:6px;
+}
+.r14-candidate button{width:100%;font-size:10px;padding:6px!important}
+.r14-overflow-badge{
+  color:#e0b37a;
+  border-color:#8a5d32!important;
+  background:rgba(80,42,16,.45)!important;
+}
+
+.image-editor{grid-template-columns:96px 1fr!important}
+.image-preview img{width:100%;height:100%;object-fit:contain}
+
+@media print{
+  .r14 .menu-item.is-selected,
+  .r14-pizza-card.is-selected,
+  .r14 .beverage-card.is-selected,
+  .r14 .promo-card.is-selected{outline:0!important;background:transparent!important}
+  .r14 .promo-price{background:transparent!important;color:#f3d9a4!important}
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "coxinhas",
+    "name": "Coxinhas",
+    "selected": false,
+    "bestScore": 85
+  },
+  {
+    "id": "pao-de-batata",
+    "name": "Pão de Batata",
+    "selected": false,
+    "bestScore": 0
+  },
+  {
+    "id": "pizza-portuguesa",
+    "name": "Pizza Individual Portuguesa",
+    "selected": false,
+    "bestScore": 0
+  },
+  {
+    "id": "pizza-calabresa",
+    "name": "Pizza Individual Calabresa",
+    "selected": false,
+    "bestScore": 0
+  },
+  {
+    "id": "pizza-frango",
+    "name": "Pizza Individual Frango",
+    "selected": false,
+    "bestScore": 0
+  },
+  {
+    "id": "pizza-queijo",
+    "name": "Pizza Individual Queijo",
+    "selected": false,
+    "bestScore": 85
+  },
+  {
+    "id": "alfajor-chocolate",
+    "name": "Alfajor Chocolate",
+    "selected": false,
+    "bestScore": 85
+  },
+  {
+    "id": "alfajor-maicena",
+    "name": "Alfajor Maicena",
+    "selected": false,
+    "bestScore": 85
+  },
+  {
+    "id": "tarteletes",
+    "name": "Tarteletes",
+    "selected": false,
+    "bestScore": 0
+  },
+  {
+    "id": "croissant-doce-leite",
+    "name": "Croissant Doce de Leite",
+    "selected": false,
+    "bestScore": 85
+  },
+  {
+    "id": "croissant-chocolate",
+    "name": "Croissant Chocolate",
+    "selected": false,
+    "bestScore": 85
+  },
+  {
+    "id": "bolo-laranja",
+    "name": "Bolo de Laranja",
+    "selected": false,
+    "bestScore": 85
+  }
+]

@@ -1,0 +1,653 @@
+8ITO A4 Studio 0001 R4 -> http://127.0.0.1:8794/
+Ollama: http://127.0.0.1:11434
+ComfyUI: http://127.0.0.1:8188
+Food checkpoint: sd_xl_base_1.0.safetensors
+Transport: UTF-8 + Windows PowerShell legacy fallback
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /studio-r9-clean-assets.css HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /studio-r8-images.js HTTP/1.1" 304 -
+
+[8ito] 127.0.0.1 - "GET /studio-r8-images.css HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /?images=r3&ts=1788017059 HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /studio-r9-clean-assets.css HTTP/1.1" 304 -[8ito] 127.0.0.1 - "GET /studio-r8-images.css HTTP/1.1" 304 -
+
+[8ito] 127.0.0.1 - "GET /studio-r8-images.js HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/empanadas.png HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/coxinhas.jpg HTTP/1.1" 200 -
+
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788016869-cc4380a3.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788016900-81402a69.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/cookies.png HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/croissant-presunto-queijo.png HTTP/1.1" 200 -
+
+[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/pao-de-queijo.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788016840-e72a27a7.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788016931-df25cb8c.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/tarteletes.jpg HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788016952-6641deb5.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788016990-f6de7756.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/cafe-espresso.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788017012-a475d9c4.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788017034-7721acd9.png HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/cafes-especiais.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/cafe-passado-leite.jpg HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/cafe-passado.jpg HTTP/1.1" 200 -
+
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788017059-5fc68a86.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /?r10=1788020391 HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /studio-r8-images.js HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /studio-r8-images.css HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /studio-r9-clean-assets.css HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788018107-3afa0350.png HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788019028-4dc83df8.png HTTP/1.1" 200 -
+
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788020090-0fbb29e8.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788020229-c5c89fa9.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788016952-6641deb5.png HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788016990-f6de7756.png HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788017034-7721acd9.png HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788017059-5fc68a86.png HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /browser-lab/floripa-webgpu-v1/ HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /?r11=1 HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /styles.css HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /studio-r8-images.css HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /studio-r5.css HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /studio-r9-clean-assets.css HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /studio-r6.css?v=6 HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /autopilot-r3.js HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /studio-r5.js HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /studio-r6.js?v=6 HTTP/1.1" 304 -[8ito] 127.0.0.1 - "GET /studio-r8-images.js HTTP/1.1" 304 -
+
+[8ito] 127.0.0.1 - "GET /app.js HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/r11-promo-manha-1788031869.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788020090-0fbb29e8.png HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788020229-c5c89fa9.png HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788017034-7721acd9.png HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788017059-5fc68a86.png HTTP/1.1" 304 -
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /styles.css HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /studio-r5.css HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /studio-r8-images.css HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /studio-r9-clean-assets.css HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /studio-r6.css?v=6 HTTP/1.1" 200 -
+
+[8ito] 127.0.0.1 - "GET /studio-r13-menu-polish.css HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /app.js HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /autopilot-r3.js HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /studio-r8-images.js HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /studio-r5.js HTTP/1.1" 200 -
+
+
+
+[8ito] 127.0.0.1 - "GET /studio-r6.js?v=6 HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /studio-r13-menu-polish.js HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/empanadas.png HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/pao-de-queijo.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/cafes-especiais.png HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/cookies.png HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/cafe-espresso.png HTTP/1.1" 200 -
+
+
+
+[8ito] 127.0.0.1 - "GET /assets/uploads/found-r3/croissant-presunto-queijo.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788020090-0fbb29e8.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788020229-c5c89fa9.png HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788017034-7721acd9.png HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /assets/generated/r11-promo-manha-1788031869.png HTTP/1.1" 200 -
+
+
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1788017059-5fc68a86.png HTTP/1.1" 200 -

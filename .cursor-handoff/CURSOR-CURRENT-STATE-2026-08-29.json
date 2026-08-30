@@ -1,0 +1,113 @@
+{
+  "project": "8ITO A4 STUDIO 0001",
+  "handoff_date": "2026-08-29",
+  "branch": "agent/8ito-a4-studio-0001",
+  "purpose": "Local editable A4 menu studio for 8ito Cafe",
+  "not_the_public_site": true,
+  "runtime": {
+    "lab_root": "C:\\tdz-os\\content-labs\\8ITO-A4-STUDIO-0001",
+    "studio_url": "http://127.0.0.1:8794/",
+    "ollama_url": "http://127.0.0.1:11434",
+    "comfyui_url": "http://127.0.0.1:8188",
+    "comfyui_root": "C:\\Users\\mathe\\Documents\\ComfyUI",
+    "desktop_shortcut": "C:\\Users\\mathe\\Desktop\\8ito A4 Studio.exe"
+  },
+  "models": {
+    "image_primary": "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors",
+    "image_primary_download_complete": true,
+    "image_primary_sha256_validated": true,
+    "image_fallback": "sd_xl_base_1.0.safetensors",
+    "vision_preferred": "qwen3-vl:4b-instruct-q4_K_M",
+    "editorial_preferred": "qwen3:8b",
+    "do_not_use_as_blocking_json_critic": "qwen3-vl:8b-thinking-q4_K_M"
+  },
+  "current_problem": {
+    "summary": "R12-R2 dual critic is timing out and generated images still drift into uncanny/incorrect food identity.",
+    "decision": "Move implementation and art-direction loop to Cursor. Do not keep dual-critic consensus in the critical path.",
+    "recommended_quality_flow": "Generate 3-4 candidates, show contact sheet/gallery, optional single visual ranker, human chooses active image."
+  },
+  "image_rules": {
+    "never_crop_from_full_menu": true,
+    "full_menu_reference_only": "C:\\Users\\mathe\\Downloads\\CARDAPIO 8ITO 270826.jpeg",
+    "one_file_per_product": true,
+    "default_fit": "contain",
+    "default_mask": "none",
+    "default_scale": 1,
+    "default_offset_x": 0,
+    "default_offset_y": 0,
+    "no_text_inside_food_image": true,
+    "no_auto_replace_after_generation": true
+  },
+  "real_asset_candidates_found": [
+    {"product": "Empanadas", "file": "infinito-vb-empanadas.png", "inspect_before_use": true},
+    {"product": "Coxinhas", "file": "coxinha-frango__slide-25.jpg", "inspect_before_use": true, "suspect_card_or_slide": true},
+    {"product": "Pão de Queijo", "file": "infinito-vb-pao-de-queijo.png", "inspect_before_use": true},
+    {"product": "Croissant Presunto e Queijo", "file": "infinito-vb-croissant-presunto-queijo.png", "inspect_before_use": true},
+    {"product": "Cookies", "file": "infinito-vb-cookies.png", "inspect_before_use": true},
+    {"product": "Tarteletes", "file": "tartelete-pasta-frola__slide-26.jpg", "inspect_before_use": true, "suspect_card_or_slide": true},
+    {"product": "Café Espresso", "file": "infinito-vb-espresso.png", "inspect_before_use": true},
+    {"product": "Cafés Especiais", "file": "infinito-vb-cappuccino.png", "inspect_before_use": true},
+    {"product": "Café Passado", "file": "cafe-passado__slide-6.jpg", "inspect_before_use": true, "suspect_card_or_slide": true},
+    {"product": "Café Passado com Leite", "file": "cafe-com-leite__slide-17.jpg", "inspect_before_use": true, "suspect_card_or_slide": true}
+  ],
+  "menu": {
+    "removed": ["Salsicha Empanada", "Salchicha"],
+    "products": [
+      {"name": "Empanadas", "price_brl": 15, "category": "salgados"},
+      {"name": "Coxinhas", "price_brl": 12, "category": "salgados"},
+      {"name": "Pão de Batata", "price_brl": 12, "category": "salgados"},
+      {"name": "Pão de Queijo", "price_brl": 6, "category": "salgados"},
+      {"name": "Croissant Presunto e Queijo", "price_brl": 15, "category": "salgados"},
+      {"name": "Pizza Individual Portuguesa", "price_brl": 13, "category": "pizzas"},
+      {"name": "Pizza Individual Calabresa", "price_brl": 13, "category": "pizzas"},
+      {"name": "Pizza Individual Frango", "price_brl": 13, "category": "pizzas"},
+      {"name": "Pizza Individual Queijo", "price_brl": 13, "category": "pizzas"},
+      {"name": "Alfajor Chocolate", "price_brl": 18, "category": "doces"},
+      {"name": "Alfajor Maicena", "price_brl": 13, "category": "doces"},
+      {"name": "Cookies", "price_brl": 10, "category": "doces"},
+      {"name": "Tarteletes", "price_brl": 13, "category": "doces"},
+      {"name": "Croissant Doce de Leite", "price_brl": 15, "category": "doces"},
+      {"name": "Croissant Chocolate", "price_brl": 15, "category": "doces"},
+      {"name": "Bolo de Laranja", "price_brl": 18, "category": "doces"},
+      {"name": "Café Espresso", "price_brl": 7, "category": "bebidas"},
+      {"name": "Cafés Especiais", "price_brl": 8, "category": "bebidas"},
+      {"name": "Café Passado", "price_brl": null, "category": "bebidas", "note": "Confirm current live JSON price before changing."},
+      {"name": "Café Passado com Leite", "price_brl": 7, "category": "bebidas"},
+      {"name": "Promo Manhã · Pão de Queijo + Café Passado", "price_brl": 8, "category": "promocoes"},
+      {"name": "Promo Almoço · Empanada + Refrigerante", "price_brl": 17, "category": "promocoes"},
+      {"name": "Promo Tarde Doce · Cookie + Café à Escolha", "price_brl": 15, "category": "promocoes"}
+    ]
+  },
+  "document": {
+    "format": "A4 portrait",
+    "width_mm": 210,
+    "height_mm": 297,
+    "target_dpi": 300,
+    "target_px": [2480, 3508],
+    "exports": ["PDF A4", "PNG 300dpi", "JPG 300dpi"],
+    "future": ["3mm bleed", "crop marks", "PDF/X", "CMYK"]
+  },
+  "visual_direction": {
+    "background": "deep emerald/dark green",
+    "accent": "gold",
+    "secondary_text": "cream/white",
+    "style": "warm artisanal premium cafe menu",
+    "avoid": ["SaaS dashboard look inside A4", "over-decoration", "circular forced crops", "ecommerce promo banner look"],
+    "current_goal": "Improve section elements, hierarchy, image alignment, prices, beverages and promo cards while preserving the 8ito identity."
+  },
+  "next_milestone": [
+    "Stop any R12/R12-R2 curator still running",
+    "Inspect and backup live lab",
+    "Diff live lab vs branch before editing",
+    "Inventory current assets visually",
+    "Implement per-product Asset Manager",
+    "Generate candidates only for missing/rejected assets",
+    "Add manual candidate selection",
+    "Remove dual-critic from critical path",
+    "Fix A4 flow so no section overlap is possible",
+    "Polish menu visual design",
+    "Validate PDF and high-resolution PNG/JPG",
+    "Commit consolidated result back to agent/8ito-a4-studio-0001"
+  ],
+  "must_read": "prototypes/8ito-a4-studio-0001/CURSOR-START-HERE-2026-08-29.md"
+}

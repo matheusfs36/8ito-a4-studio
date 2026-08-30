@@ -1,0 +1,267 @@
+/* 8ito A4 Studio R13 — refined menu visual system
+   Presentation-only overrides. Keeps document data and print size untouched. */
+
+.menu-page.r13-menu-polish{
+  --r13-gold:#d3a454;
+  --r13-gold-soft:#e5c887;
+  --r13-cream:#f4ead6;
+  --r13-ink:#05251f;
+  --r13-panel:rgba(7,48,39,.58);
+  --r13-line:rgba(211,164,84,.48);
+  --r13-line-soft:rgba(224,192,126,.20);
+  --r13-shadow:0 10px 24px rgba(0,0,0,.18);
+  background:
+    radial-gradient(circle at 50% -8%,rgba(34,92,73,.34),transparent 30%),
+    radial-gradient(circle at 0% 100%,rgba(18,65,52,.20),transparent 30%),
+    linear-gradient(180deg,#052c25 0%,#03271f 52%,#021f1a 100%);
+}
+
+.menu-page.r13-menu-polish::before,
+.menu-page.r13-menu-polish::after{
+  position:absolute;
+  z-index:2;
+  color:rgba(211,164,84,.22);
+  font:400 clamp(18px,2.4vw,34px) Georgia,serif;
+  pointer-events:none;
+}
+.menu-page.r13-menu-polish::before{content:"❦";left:4.8%;top:3.6%;transform:rotate(-18deg)}
+.menu-page.r13-menu-polish::after{content:"❧";right:4.8%;bottom:3.6%;transform:rotate(18deg)}
+
+.r13-menu-polish .menu-inner{
+  inset:3.15%;
+  border:1.7px solid var(--r13-gold);
+  border-radius:2.35%;
+  padding:2.15% 2.25% 1.85%;
+  gap:1.05%;
+  box-shadow:
+    inset 0 0 0 1px rgba(235,204,137,.08),
+    inset 0 0 46px rgba(0,0,0,.12);
+}
+.r13-menu-polish .menu-inner::before{
+  content:"";
+  position:absolute;
+  inset:.72%;
+  border:1px solid rgba(211,164,84,.20);
+  border-radius:2.1%;
+  pointer-events:none;
+}
+
+.r13-menu-polish .menu-header{
+  position:relative;
+  padding-top:.25%;
+  padding-bottom:.45%;
+}
+.r13-menu-polish .menu-header::after{
+  content:"";
+  display:block;
+  width:26%;
+  height:1px;
+  margin:.85% auto 0;
+  background:linear-gradient(90deg,transparent,var(--r13-line),transparent);
+}
+.r13-menu-polish .menu-infinity{
+  color:var(--r13-gold);
+  height:.66em;
+  filter:drop-shadow(0 2px 8px rgba(0,0,0,.18));
+}
+.r13-menu-polish .menu-logo{
+  color:#ddb166;
+  letter-spacing:.025em;
+  text-shadow:0 2px 12px rgba(0,0,0,.18);
+}
+.r13-menu-polish .menu-tagline{
+  color:#e0c58b;
+  letter-spacing:.30em;
+  margin-top:1%;
+  opacity:.92;
+}
+
+.r13-menu-polish .menu-columns{
+  gap:3.35%;
+  align-items:start;
+}
+.r13-menu-polish .menu-stack{gap:1.65%}
+.r13-menu-polish .menu-section{min-width:0}
+.r13-menu-polish .menu-section + .menu-section{margin-top:.9%}
+
+.r13-menu-polish .menu-section h3,
+.r13-menu-polish .menu-bottom-section h3{
+  gap:9px;
+  color:var(--r13-gold);
+  letter-spacing:.035em;
+  text-shadow:0 1px 8px rgba(0,0,0,.16);
+}
+.r13-menu-polish .menu-section h3::before,
+.r13-menu-polish .menu-section h3::after,
+.r13-menu-polish .menu-bottom-section h3::before,
+.r13-menu-polish .menu-bottom-section h3::after{
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--r13-gold),var(--r13-gold));
+  opacity:.75;
+}
+.r13-menu-polish .menu-section h3::after,
+.r13-menu-polish .menu-bottom-section h3::after{background:linear-gradient(90deg,var(--r13-gold),var(--r13-gold),transparent)}
+
+.r13-menu-polish .menu-items{
+  display:grid;
+  gap:0;
+}
+.r13-menu-polish .menu-item{
+  grid-template-columns:15.5% minmax(0,1fr) auto;
+  min-height:36px;
+  gap:2.5%;
+  padding:.75% 0;
+  border-bottom:1px dotted var(--r13-line-soft);
+  position:relative;
+}
+.r13-menu-polish .menu-item:last-child{border-bottom-color:rgba(211,164,84,.10)}
+.r13-menu-polish .menu-item-image{
+  width:100%;
+  aspect-ratio:1.36/1;
+  border-radius:8px;
+  background:
+    radial-gradient(circle at 50% 40%,rgba(35,91,72,.33),rgba(4,37,31,.92)),
+    #082d25;
+  border:1px solid rgba(211,164,84,.20);
+  box-shadow:inset 0 0 14px rgba(0,0,0,.12);
+  overflow:hidden;
+}
+.r13-menu-polish .menu-item-image img{
+  width:100%;height:100%;
+  object-fit:contain!important;
+  object-position:center!important;
+  padding:3%;
+  border-radius:7px;
+}
+.r13-menu-polish .menu-item-image span{
+  color:rgba(229,200,135,.80);
+  font-size:80%;
+}
+.r13-menu-polish .menu-item-name{
+  color:var(--r13-cream);
+  font-weight:600;
+  line-height:1.08;
+  letter-spacing:.005em;
+  text-wrap:balance;
+}
+.r13-menu-polish .menu-item-price{
+  color:#f0d6a0;
+  font-weight:700;
+  padding:.16em .38em;
+  border-radius:999px;
+  background:rgba(211,164,84,.06);
+  border:1px solid rgba(211,164,84,.12);
+}
+
+/* Density safeguards keep added products from colliding with beverages. */
+.r13-menu-polish.r13-dense .menu-item{min-height:32px;padding:.48% 0}
+.r13-menu-polish.r13-dense .menu-item-name{font-size:clamp(7px,1.02vw,13px)}
+.r13-menu-polish.r13-dense .menu-section h3{margin-bottom:1.2%}
+.r13-menu-polish.r13-ultra .menu-item{min-height:28px;padding:.30% 0}
+.r13-menu-polish.r13-ultra .menu-item-name{font-size:clamp(6.7px,.94vw,12px)}
+.r13-menu-polish.r13-ultra .menu-item-image{aspect-ratio:1.48/1}
+
+.r13-menu-polish .menu-bottom-section{
+  background:linear-gradient(180deg,rgba(8,48,39,.58),rgba(4,35,29,.52));
+  border:1px solid rgba(211,164,84,.72);
+  border-radius:12px;
+  box-shadow:var(--r13-shadow),inset 0 0 0 1px rgba(240,215,160,.035);
+  padding:1.25% 1.55% 1.35%;
+}
+.r13-menu-polish .menu-bottom-section h3{
+  margin:-.15% 0 .9%;
+  font-size:clamp(12px,1.72vw,23px);
+}
+
+.r13-menu-polish .beverage-grid{gap:.7%}
+.r13-menu-polish .beverage-card{
+  padding:0 5%;
+  border-right:1px solid rgba(211,164,84,.24);
+}
+.r13-menu-polish .beverage-icon{
+  width:54%;
+  max-width:84px;
+  aspect-ratio:1.28/1;
+  margin:0 auto 3.5%;
+  border-radius:9px;
+  background:linear-gradient(180deg,rgba(21,72,58,.50),rgba(4,40,33,.68));
+  border:1px solid rgba(211,164,84,.14);
+  box-shadow:none;
+  overflow:hidden;
+}
+.r13-menu-polish .beverage-icon img{
+  width:100%!important;height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  border-radius:8px!important;
+  padding:3%;
+}
+.r13-menu-polish .beverage-card strong{
+  color:var(--r13-cream);
+  line-height:1.08;
+  min-height:2.05em;
+}
+.r13-menu-polish .beverage-card span{
+  color:#f2d79e;
+  margin-top:2.2%;
+}
+
+.r13-menu-polish .promo-grid{gap:1.1%}
+.r13-menu-polish .promo-card{
+  padding:0 3.6% .35%;
+  border-right:1px solid rgba(211,164,84,.30);
+}
+.r13-menu-polish .promo-card .promo-thumb{
+  width:68%;
+  max-width:150px;
+  aspect-ratio:1.55/1;
+  margin:0 auto 2.4%;
+  border-radius:9px;
+  background:linear-gradient(180deg,rgba(21,72,58,.46),rgba(4,40,33,.66));
+  border:1px solid rgba(211,164,84,.14);
+  box-shadow:inset 0 0 15px rgba(0,0,0,.10);
+  overflow:hidden;
+}
+.r13-menu-polish .promo-thumb img{
+  width:100%;height:100%;
+  object-fit:contain!important;
+  object-position:center!important;
+  padding:2.5%;
+}
+.r13-menu-polish .promo-card strong{
+  color:var(--r13-cream);
+  font-weight:700;
+  line-height:1.08;
+  min-height:2.35em;
+}
+.r13-menu-polish .promo-price{
+  margin-top:2.4%;
+  padding:2.1% 8%;
+  border-radius:6px;
+  background:linear-gradient(180deg,#d5a753,#c79643);
+  color:#09231d;
+  box-shadow:0 2px 7px rgba(0,0,0,.14);
+}
+
+.r13-menu-polish .menu-footer{
+  position:relative;
+  color:#ddc18a;
+  padding-top:.25%;
+  letter-spacing:.055em;
+}
+.r13-menu-polish .menu-footer::before,
+.r13-menu-polish .menu-footer::after{
+  content:"";
+  display:inline-block;
+  vertical-align:middle;
+  width:10%;
+  height:1px;
+  margin:0 2%;
+  background:linear-gradient(90deg,transparent,rgba(211,164,84,.65));
+}
+.r13-menu-polish .menu-footer::after{background:linear-gradient(90deg,rgba(211,164,84,.65),transparent)}
+
+@media print{
+  .r13-menu-polish .menu-item-price{background:rgba(211,164,84,.06)!important}
+  .r13-menu-polish .menu-bottom-section{box-shadow:none!important}
+}

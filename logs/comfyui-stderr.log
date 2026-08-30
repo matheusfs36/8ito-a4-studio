@@ -1,0 +1,61 @@
+[32m[INFO][0m setup plugin alembic.autogenerate.schemas
+[32m[INFO][0m setup plugin alembic.autogenerate.tables
+[32m[INFO][0m setup plugin alembic.autogenerate.types
+[32m[INFO][0m setup plugin alembic.autogenerate.constraints
+[32m[INFO][0m setup plugin alembic.autogenerate.defaults
+[32m[INFO][0m setup plugin alembic.autogenerate.comments
+[32m[INFO][0m 
+Prestartup times for custom nodes:
+[32m[INFO][0m   15.0 seconds: C:\Users\mathe\Documents\ComfyUI\custom_nodes\comfyui-manager
+[32m[INFO][0m 
+[1m[33m[WARNING][0m WARNING: You need pytorch with cu130 or higher to use optimized CUDA operations.
+[32m[INFO][0m Found comfy_kitchen backend cuda: {'available': True, 'disabled': True, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'apply_rope_split_half', 'apply_rope_split_half1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'gemv_awq_w4a16', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'quantize_svdquant_w4a4', 'scaled_mm_nvfp4', 'scaled_mm_svdquant_w4a4', 'stochastic_rounding_fp8']}
+[32m[INFO][0m Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'apply_rope_split_half', 'apply_rope_split_half1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'gemv_awq_w4a16', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'quantize_svdquant_w4a4', 'scaled_mm_nvfp4', 'scaled_mm_svdquant_w4a4', 'stochastic_rounding_fp8']}
+[32m[INFO][0m Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
+[32m[INFO][0m Checkpoint files will always be loaded safely.
+[32m[INFO][0m Total VRAM 8188 MB, total RAM 32472 MB
+[32m[INFO][0m pytorch version: 2.4.0+cu124
+[32m[INFO][0m Set vram state to: NORMAL_VRAM
+[32m[INFO][0m Device: cuda:0 NVIDIA GeForce RTX 4070 Laptop GPU : cudaMallocAsync
+[32m[INFO][0m Using async weight offloading with 2 streams
+[32m[INFO][0m Enabled pinned memory 12988.0
+[1m[33m[WARNING][0m Torch version too old to set sdpa backend priority.
+[32m[INFO][0m Using pytorch attention
+[1m[33m[WARNING][0m Unsupported Pytorch detected. DynamicVRAM support requires Pytorch version 2.8 or later. Falling back to legacy ModelPatcher. VRAM estimates may be unreliable especially on Windows
+[32m[INFO][0m Python version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+[32m[INFO][0m ComfyUI version: 0.24.0
+[32m[INFO][0m comfy-aimdo version: 0.4.9
+[32m[INFO][0m comfy-kitchen version: 0.2.10
+[32m[INFO][0m comfyui-frontend-package version: 1.45.15
+[32m[INFO][0m comfyui-workflow-templates version: 0.9.98
+[32m[INFO][0m comfyui-embedded-docs version: 0.5.3
+[32m[INFO][0m comfy-kitchen version: 0.2.10
+[32m[INFO][0m comfy-aimdo version: 0.4.9
+[32m[INFO][0m [Prompt Server] web root: C:\Users\mathe\Documents\ComfyUI\venv\Lib\site-packages\comfyui_frontend_package\static
+[32m[INFO][0m Asset seeder disabled
+[32m[INFO][0m ComfyUI-GGUF: Partial torch compile only, consider updating pytorch
+[32m[INFO][0m ### Loading: ComfyUI-Manager (V3.41)
+[32m[INFO][0m [ComfyUI-Manager] network_mode: public
+[32m[INFO][0m [ComfyUI-Manager] ComfyUI per-queue preview override detected (PR #11261). Manager's preview method feature is disabled. Use ComfyUI's --preview-method CLI option or 'Settings > Execution > Live preview method'.
+[32m[INFO][0m ### ComfyUI Revision: 1 [6d18f4ad] | Released on '2026-06-10'
+[32m[INFO][0m [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[32m[INFO][0m [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[32m[INFO][0m [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[32m[INFO][0m [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+[32m[INFO][0m [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+[32m[INFO][0m 
+Import times for custom nodes:
+[32m[INFO][0m    0.0 seconds: C:\Users\mathe\Documents\ComfyUI\custom_nodes\websocket_image_save.py
+[32m[INFO][0m    0.3 seconds: C:\Users\mathe\Documents\ComfyUI\custom_nodes\ComfyUI-GGUF
+[32m[INFO][0m    0.9 seconds: C:\Users\mathe\Documents\ComfyUI\custom_nodes\comfyui-manager
+[32m[INFO][0m    2.6 seconds: C:\Users\mathe\Documents\ComfyUI\custom_nodes\ComfyUI-HunyuanWorld-Mirror
+[32m[INFO][0m    5.5 seconds: C:\Users\mathe\Documents\ComfyUI\custom_nodes\ComfyUI-VideoHelperSuite
+[32m[INFO][0m 
+[32m[INFO][0m Context impl SQLiteImpl.
+[32m[INFO][0m Will assume non-transactional DDL.
+[32m[INFO][0m Using RAM pressure cache.
+[32m[INFO][0m Starting server
+
+[32m[INFO][0m To see the GUI go to: http://127.0.0.1:8188
+[32m[INFO][0m [ComfyUI-Manager] default cache updated: https://api.comfy.org/nodes
+[32m[INFO][0m [ComfyUI-Manager] All startup tasks have been completed.

@@ -1,0 +1,32 @@
+:root{--r9-art-w:19.5%;--r9-item-h:42px}
+
+/* R9: every product is a self-contained asset in a fixed non-destructive frame. */
+.menu-item{grid-template-columns:var(--r9-art-w) minmax(0,1fr) auto!important;min-height:var(--r9-item-h)!important;align-items:center!important}
+.menu-item-image{width:100%!important;height:calc(var(--r9-item-h) - 4px)!important;aspect-ratio:auto!important;overflow:hidden!important;border-radius:6px!important;background:#03261f!important;display:flex!important;align-items:center!important;justify-content:center!important}
+.menu-item-image img,.menu-item-image .r8-product-img{width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;object-position:center center!important;border-radius:0!important;clip-path:none!important;mask:none!important;-webkit-mask:none!important}
+
+/* Generated pizzas obey the exact same frame and can no longer expand the row. */
+html body .menu-item[data-image-source="generated"] .menu-item-image{width:100%!important;height:calc(var(--r9-item-h) - 4px)!important;aspect-ratio:auto!important;overflow:hidden!important;border-radius:6px!important;box-shadow:none!important}
+html body .menu-item[data-image-source="generated"] .menu-item-image img{width:100%!important;height:100%!important;object-fit:contain!important}
+
+.menu-page.r6-dense{--r9-art-w:18.5%;--r9-item-h:37px}
+.menu-page.r6-compact{--r9-art-w:17.5%;--r9-item-h:33px}
+.menu-page.r6-ultra{--r9-art-w:16.5%;--r9-item-h:29px}
+
+.beverage-icon{width:62px!important;height:52px!important;max-width:68%!important;aspect-ratio:auto!important;overflow:hidden!important;border-radius:6px!important;background:#03261f!important;margin:0 auto 3px!important}
+.beverage-icon img,.beverage-icon .r8-product-img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;transform:none!important}
+
+.promo-card .promo-thumb{width:112px!important;height:64px!important;max-width:88%!important;aspect-ratio:auto!important;overflow:hidden!important;border-radius:7px!important;background:#03261f!important;margin:0 auto 3px!important}
+.promo-card .promo-thumb img,.promo-card .promo-thumb .r8-product-img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;transform:none!important}
+
+/* Sidebar and item editor also show the whole normalized asset. */
+.product-list-item .thumb,.image-preview{background-size:contain!important;background-position:center!important;background-repeat:no-repeat!important;background-color:#03261f!important}
+
+/* Keep the image layer subordinate to text/layout. */
+.menu-item-image,.beverage-icon,.promo-thumb{position:relative!important;z-index:1!important}
+.menu-item-name,.menu-item-price,.beverage-card strong,.beverage-card span,.promo-card strong,.promo-price{position:relative;z-index:2}
+
+@media print{
+  .menu-item-image,.beverage-icon,.promo-thumb{overflow:hidden!important}
+  .menu-item-image img,.beverage-icon img,.promo-thumb img{object-fit:contain!important;object-position:center!important}
+}

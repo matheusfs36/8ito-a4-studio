@@ -1,0 +1,26 @@
+﻿8ITO IMAGE SCAN R3
+Found local: 10
+Generated local AI: 9
+Kept existing good assets: 4
+Failed: 0
+
+FOUND  Empanadas <- C:\Users\mathe\Documents\PROJETOS ARQUITETURA\PABLO\PROJETO INFINITO CAFE\05_App_Site\deploy\enviar-discord\web\assets\produtos\infinito-vb-empanadas.png [score 264]
+FOUND  Coxinhas <- C:\Users\mathe\Documents\PROJETOS ARQUITETURA\PABLO\PROJETO INFINITO CAFE\07_Pacote_Jemerson_Instagram\02_IMAGENS\slides-produto\coxinha-frango__slide-25.jpg [score 264]
+MISS   PÃ£o de Batata
+FOUND  PÃ£o de Queijo <- C:\Users\mathe\Documents\PROJETOS ARQUITETURA\PABLO\PROJETO INFINITO CAFE\05_App_Site\deploy\enviar-discord\web\assets\produtos\infinito-vb-pao-de-queijo.png [score 264]
+FOUND  Croissant Presunto e Queijo <- C:\Users\mathe\Documents\PROJETOS ARQUITETURA\PABLO\PROJETO INFINITO CAFE\05_App_Site\deploy\staging\assets\produtos\infinito-vb-croissant-presunto-queijo.png [score 264]
+MISS   Pizza Individual Portuguesa
+MISS   Pizza Individual Calabresa
+MISS   Pizza Individual Frango
+MISS   Pizza Individual Queijo
+MISS   Alfajor Chocolate
+MISS   Alfajor Maicena
+FOUND  Cookies <- C:\Users\mathe\Documents\PROJETOS ARQUITETURA\PABLO\PROJETO INFINITO CAFE\05_App_Site\deploy\staging\assets\produtos\infinito-vb-cookies.png [score 264]
+FOUND  Tarteletes <- C:\Users\mathe\Documents\PROJETOS ARQUITETURA\PABLO\PROJETO INFINITO CAFE\07_Pacote_Jemerson_Instagram\02_IMAGENS\slides-produto\tartelete-pasta-frola__slide-26.jpg [score 264]
+MISS   Croissant Doce de Leite
+MISS   Croissant Chocolate
+MISS   Bolo de Laranja
+FOUND  CafÃ© Espresso <- C:\Users\mathe\Documents\PROJETOS ARQUITETURA\PABLO\PROJETO INFINITO CAFE\05_App_Site\deploy\staging\assets\produtos\infinito-vb-espresso.png [score 264]
+FOUND  CafÃ©s Especiais <- C:\Users\mathe\Documents\PROJETOS ARQUITETURA\PABLO\PROJETO INFINITO CAFE\06_Referencias_Visuais\PNG_VERDE_BANDEIRA_PARA_CANVA\infinito-vb-cappuccino.png [score 264]
+FOUND  CafÃ© Passado <- C:\Users\mathe\Documents\PROJETOS ARQUITETURA\PABLO\PROJETO INFINITO CAFE\07_Pacote_Jemerson_Instagram\02_IMAGENS\slides-produto\cafe-passado__slide-6.jpg [score 264]
+FOUND  CafÃ© Passado com Leite <- C:\Users\mathe\Documents\PROJETOS ARQUITETURA\PABLO\PROJETO INFINITO CAFE\07_Pacote_Jemerson_Instagram\02_IMAGENS\slides-produto\cafe-com-leite__slide-17.jpg [score 264]

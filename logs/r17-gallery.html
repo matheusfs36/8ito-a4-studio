@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>8ito · galeria de pizzas</title>
+  <style>
+    :root{
+      --bg:#021613;
+      --bg-deep:#01110e;
+      --card:#05241e;
+      --frame:#04211b;
+      --gold:#d4a85a;
+      --gold-soft:#e6c790;
+      --cream:#f6eee0;
+      --line:rgba(212,168,90,.32);
+      --muted:rgba(246,238,224,.62);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:
+      radial-gradient(ellipse at 50% -8%,rgba(56,110,88,.18),transparent 42%),
+      linear-gradient(180deg,#07342c 0%,var(--bg) 38%,var(--bg-deep) 100%);
+      color:var(--cream);font:15px/1.35 Georgia,"Palatino Linotype",serif}
+    body{min-height:100vh;padding:28px 4vw 64px}
+    .wrap{max-width:1280px;margin:0 auto}
+    header.hero{text-align:center;margin:0 auto 28px;max-width:720px}
+    header.hero h1{
+      margin:0;
+      font:600 clamp(13px,1.35vw,18px)/1.1 Georgia,serif;
+      letter-spacing:.34em;
+      color:var(--gold);
+      text-transform:uppercase;
+    }
+    header.hero p{
+      margin:10px 0 0;
+      font-size:clamp(12px,1.05vw,14px);
+      letter-spacing:.04em;
+      color:var(--muted);
+    }
+    .toolbar{display:flex;justify-content:center;gap:10px;margin:22px 0 8px;flex-wrap:wrap}
+    .toolbar button{
+      appearance:none;cursor:pointer;
+      background:transparent;color:var(--gold-soft);
+      border:1px solid var(--line);border-radius:999px;
+      padding:.45em 1.1em;font:600 12px Georgia,serif;letter-spacing:.08em;
+    }
+    .toolbar button.is-on{background:rgba(212,168,90,.12);border-color:var(--gold)}
+    .toolbar button:hover{border-color:var(--gold)}
+    .note{text-align:center;font-size:11px;color:var(--muted);margin:0 0 26px;letter-spacing:.03em}
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+      margin:0 auto 42px;
+    }
+    .pizza-card{
+      background:linear-gradient(180deg,rgba(8,48,39,.72),rgba(3,28,24,.92));
+      border:.65px solid rgba(212,168,90,.38);
+      border-radius:12px;
+      box-shadow:0 10px 22px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,236,190,.06);
+      padding:10px 10px 12px;
+      min-width:0;
+    }
+    .pizza-card .frame{
+      aspect-ratio:1;
+      border-radius:8px;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 50% 42%,rgba(48,96,78,.28),rgba(3,28,24,.96) 72%),
+        var(--frame);
+      border:.55px solid rgba(212,168,90,.22);
+      box-shadow:inset 0 8px 14px rgba(0,0,0,.16);
+      display:flex;align-items:center;justify-content:center;
+      cursor:zoom-in;
+    }
+    .pizza-card .frame img{
+      width:100%;height:100%;object-fit:contain;padding:7%;
+      transition:transform .35s ease;
+    }
+    .pizza-card .frame:hover img{transform:scale(1.06)}
+    .meta{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin:10px 2px 0}
+    .meta strong{font:600 15px/1.1 Georgia,serif;color:var(--cream)}
+    .meta span.price{font:700 14px/1 Georgia,serif;color:#f0d6a0}
+    .badges{display:flex;gap:6px;margin:8px 2px 0;flex-wrap:wrap}
+    .badge{
+      font:600 10px/1 Georgia,serif;letter-spacing:.1em;text-transform:uppercase;
+      padding:.28em .55em;border-radius:999px;
+      border:.55px solid rgba(212,168,90,.45);color:var(--gold-soft);
+    }
+    .badge.review{border-color:rgba(230,199,144,.55);color:#e6c790;background:rgba(212,168,90,.08)}
+    .badge.ok{border-color:rgba(159,212,191,.4);color:#b7dccb}
+
+    .flavor{margin:0 0 18px}
+    .flavor summary{
+      list-style:none;cursor:pointer;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:10px 4px;border-bottom:.55px solid rgba(212,168,90,.22);
+      color:var(--gold);letter-spacing:.18em;font:600 12px Georgia,serif;
+    }
+    .flavor summary::-webkit-details-marker{display:none}
+    .flavor summary em{font-style:normal;color:var(--muted);letter-spacing:.04em;font-weight:500}
+    .cand-row{
+      display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:10px;padding:14px 0 8px;
+    }
+    .cand{
+      margin:0;background:rgba(4,33,27,.78);
+      border:.55px solid rgba(212,168,90,.22);border-radius:10px;padding:8px;
+      min-width:0;
+    }
+    .cand.is-live{border-color:var(--gold);box-shadow:0 0 0 1px rgba(212,168,90,.35)}
+    .cand .frame{
+      aspect-ratio:1;border-radius:7px;overflow:hidden;cursor:zoom-in;
+      background:var(--frame);display:flex;align-items:center;justify-content:center;
+      border:.5px solid rgba(212,168,90,.18);
+    }
+    .cand img{width:100%;height:100%;object-fit:contain;padding:6%;transition:transform .3s ease}
+    .cand .frame:hover img{transform:scale(1.05)}
+    .cand figcaption{margin:8px 2px 0;font-size:11px;color:var(--gold-soft);letter-spacing:.03em}
+    .cand .origin{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+    .actions{display:flex;gap:6px;margin-top:8px}
+    .actions button{
+      flex:1;cursor:pointer;border:.55px solid var(--line);background:transparent;
+      color:var(--cream);border-radius:7px;padding:6px 4px;font:600 10px Georgia,serif;letter-spacing:.04em;
+    }
+    .actions button:hover{border-color:var(--gold);color:var(--gold-soft)}
+    .actions button.pick.is-picked{background:rgba(212,168,90,.14);border-color:var(--gold);color:var(--gold)}
+
+    .lightbox,.compare{
+      position:fixed;inset:0;background:rgba(1,10,8,.86);
+      display:none;align-items:center;justify-content:center;z-index:40;padding:24px;
+    }
+    .lightbox.is-open,.compare.is-open{display:flex}
+    .lightbox .stage{max-width:min(92vw,820px);text-align:center}
+    .lightbox img,.compare img{
+      width:min(78vw,640px);max-height:72vh;object-fit:contain;
+      background:var(--frame);border-radius:12px;padding:3%;
+      border:.65px solid rgba(212,168,90,.35);
+      box-shadow:0 18px 40px rgba(0,0,0,.4);
+    }
+    .lightbox p,.compare p{margin:12px 0 0;color:var(--gold-soft);letter-spacing:.06em}
+    .nav{position:absolute;top:50%;transform:translateY(-50%);
+      background:transparent;border:0;color:var(--gold);font-size:42px;cursor:pointer;padding:12px}
+    .nav.prev{left:12px}.nav.next{right:12px}
+    .close{position:absolute;top:16px;right:20px;background:transparent;border:0;color:var(--cream);font-size:28px;cursor:pointer}
+    .compare .pair{display:grid;grid-template-columns:1fr 1fr;gap:22px;width:min(96vw,1100px)}
+    .compare figure{margin:0;text-align:center}
+    .compare img{width:100%;max-height:68vh}
+    .toast{
+      position:fixed;bottom:18px;left:50%;transform:translateX(-50%);
+      background:#04221c;border:1px solid var(--gold);color:var(--cream);
+      padding:8px 14px;border-radius:999px;font-size:12px;display:none;z-index:50;
+    }
+    .compare-hint{text-align:center;color:var(--gold-soft);font-size:13px;margin-bottom:8px}
+
+    @media (max-width:980px){
+      .hero-grid,.cand-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .compare .pair{grid-template-columns:1fr}
+    }
+    @media (max-width:560px){
+      .hero-grid,.cand-row{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1>Pizzas individuais</h1>
+      <p>Imagem atual + candidatos · clique para ampliar e comparar</p>
+    </header>
+    <div class="toolbar">
+      <button type="button" id="compareBtn">Comparar lado a lado</button>
+    </div>
+    <p class="note">Comparador local. «Usar esta» não altera o A4 nem o JSON do cardápio.</p>
+
+    <div class="hero-grid" id="heroGrid"></div>
+    <div id="flavors"></div>
+  </div>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="close" type="button" aria-label="Fechar">×</button>
+    <button class="nav prev" type="button" aria-label="Anterior">‹</button>
+    <div class="stage">
+      <img id="lbImg" alt="">
+      <p id="lbCap"></p>
+      <div class="toolbar" style="margin-top:14px">
+        <button type="button" id="lbVsCurrent">Comparar com a atual</button>
+      </div>
+    </div>
+    <button class="nav next" type="button" aria-label="Próxima">›</button>
+  </div>
+
+  <div class="compare" id="compare" hidden>
+    <button class="close" type="button" aria-label="Fechar">×</button>
+    <div>
+      <p class="compare-hint" id="compareHint">Clique em duas fotos para comparar</p>
+      <div class="pair">
+        <figure><img id="cmpA" alt=""><p id="cmpACap"></p></figure>
+        <figure><img id="cmpB" alt=""><p id="cmpBCap"></p></figure>
+      </div>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const PIZZAS = [
+      {
+        id: "pizza-portuguesa",
+        name: "Portuguesa",
+        price: "R$ 13",
+        status: "review",
+        current: { url: "assets/generated/r15b-pizza-portuguesa-1788037687-640f682a.png", origin: "R15b · activa no A4" },
+        candidates: [
+          { url: "assets/generated/r17-pizza-portuguesa-1-1788040477-ad9fc384.png", origin: "R17 · candidato 1" },
+          { url: "assets/generated/r17-pizza-portuguesa-2-1788040493-730192b8.png", origin: "R17 · candidato 2" },
+          { url: "assets/generated/r17-pizza-portuguesa-3-1788040510-7984c668.png", origin: "R17 · candidato 3" },
+          { url: "assets/generated/r17-pizza-portuguesa-4-1788040526-1725c185.png", origin: "R17 · candidato 4" },
+        ],
+      },
+      {
+        id: "pizza-calabresa",
+        name: "Calabresa",
+        price: "R$ 13",
+        status: "review",
+        current: { url: "assets/generated/r15-pizza-calabresa-1788037242-67b5f335.png", origin: "R15 · activa no A4" },
+        candidates: [
+          { url: "assets/generated/r17-pizza-calabresa-1-1788040550-1f7872f8.png", origin: "R17 · candidato 1" },
+          { url: "assets/generated/r17-pizza-calabresa-2-1788040568-34d79690.png", origin: "R17 · candidato 2" },
+          { url: "assets/generated/r17-pizza-calabresa-3-1788040586-0ed220ca.png", origin: "R17 · candidato 3" },
+          { url: "assets/generated/r17-pizza-calabresa-4-1788040604-daccf778.png", origin: "R17 · candidato 4" },
+        ],
+      },
+      {
+        id: "pizza-frango",
+        name: "Frango",
+        price: "R$ 13",
+        status: "ok",
+        current: { url: "assets/generated/r16-pizza-frango-2-1788039384-04124449.png", origin: "R16 #2 · activa no A4" },
+        candidates: [
+          { url: "assets/generated/r17-pizza-frango-1-1788040629-a5c92d62.png", origin: "R17 · candidato 1" },
+          { url: "assets/generated/r17-pizza-frango-2-1788040646-4e3690b4.png", origin: "R17 · candidato 2" },
+          { url: "assets/generated/r17-pizza-frango-3-1788040664-339f91d5.png", origin: "R17 · candidato 3" },
+          { url: "assets/generated/r17-pizza-frango-4-1788040680-093c2e1c.png", origin: "R17 · candidato 4" },
+        ],
+      },
+      {
+        id: "pizza-queijo",
+        name: "Queijo",
+        price: "R$ 13",
+        status: "ok",
+        current: { url: "assets/generated/r16-pizza-queijo-1-1788039443-70803636.png", origin: "R16 #1 · activa no A4" },
+        candidates: [
+          { url: "assets/generated/r17-pizza-queijo-1-1788040704-993f0214.png", origin: "R17 · candidato 1" },
+          { url: "assets/generated/r17-pizza-queijo-2-1788040722-79bb0a6c.png", origin: "R17 · candidato 2" },
+          { url: "assets/generated/r17-pizza-queijo-3-1788040739-fdcc9bcf.png", origin: "R17 · candidato 3" },
+          { url: "assets/generated/r17-pizza-queijo-4-1788040755-6c5d2108.png", origin: "R17 · candidato 4" },
+        ],
+      },
+    ];
+    const gallery = [];
+    const picks = JSON.parse(sessionStorage.getItem("r17-gallery-picks") || "{}");
+    let compareOn = false;
+    let cmpSel = [];
+    let lbIndex = 0;
+
+    function src(url){ return "/" + url.replace(/^\//,""); }
+
+    function toast(msg){
+      const el = document.getElementById("toast");
+      el.textContent = msg;
+      el.style.display = "block";
+      clearTimeout(toast._t);
+      toast._t = setTimeout(() => { el.style.display = "none"; }, 2800);
+    }
+
+    function allShots(pizza){
+      return [{...pizza.current, live:true, label:"Atual", pizza:pizza.name},
+        ...pizza.candidates.map((c,i) => ({...c, live:false, label:"Candidato "+(i+1), pizza:pizza.name}))];
+    }
+
+    function renderHero(){
+      document.getElementById("heroGrid").innerHTML = PIZZAS.map((p) => `
+        <article class="pizza-card">
+          <div class="frame" data-open="${src(p.current.url)}" data-cap="${p.name} · Atual">
+            <img src="${src(p.current.url)}" alt="${p.name}" style="object-fit:contain">
+          </div>
+          <div class="meta"><strong>${p.name}</strong><span class="price">${p.price}</span></div>
+          <div class="badges">
+            <span class="badge">Atual</span>
+            <span class="badge ${p.status === "review" ? "review" : "ok"}">${p.status === "review" ? "Revisar" : "Aceitável"}</span>
+          </div>
+        </article>`).join("");
+    }
+
+    function renderFlavors(){
+      document.getElementById("flavors").innerHTML = PIZZAS.map((p) => {
+        const shots = allShots(p);
+        shots.forEach((s) => gallery.push(s));
+        const cells = shots.map((s, i) => {
+          const picked = picks[p.id] === s.url;
+          return `<figure class="cand ${s.live ? "is-live" : ""}">
+            <div class="frame" data-open="${src(s.url)}" data-cap="${p.name} · ${s.label}">
+              <img src="${src(s.url)}" alt="${p.name} ${s.label}" style="object-fit:contain">
+            </div>
+            <figcaption>${s.label}${s.live ? " · publicada" : ""}
+              <span class="origin">${s.origin}</span>
+            </figcaption>
+            <div class="actions">
+              <button type="button" class="pick ${picked ? "is-picked" : ""}" data-use="${s.url}" data-id="${p.id}">Usar esta</button>
+              <button type="button" data-open="${src(s.url)}" data-cap="${p.name} · ${s.label}">Ampliar</button>
+            </div>
+          </figure>`;
+        }).join("");
+        return `<details class="flavor" ${p.status === "review" ? "open" : ""}>
+          <summary>${p.name.toUpperCase()} <em>${p.status === "review" ? "revisar" : "aceitável"} · actual marcada a ouro</em></summary>
+          <div class="cand-row">${cells}</div>
+        </details>`;
+      }).join("");
+    }
+
+    function openLightbox(url, cap){
+      lbIndex = Math.max(0, gallery.findIndex((s) => src(s.url) === url));
+      const box = document.getElementById("lightbox");
+      box.hidden = false; box.classList.add("is-open");
+      showLb();
+    }
+    function showLb(){
+      const s = gallery[lbIndex];
+      document.getElementById("lbImg").src = src(s.url);
+      document.getElementById("lbCap").textContent = `${s.pizza} · ${s.label} · ${s.origin}`;
+    }
+    function closeOverlays(){
+      ["lightbox","compare"].forEach((id) => {
+        const el = document.getElementById(id);
+        el.classList.remove("is-open"); el.hidden = true;
+      });
+    }
+
+    function enterCompare(){
+      compareOn = true;
+      cmpSel = [];
+      document.getElementById("compareBtn").classList.add("is-on");
+      toast("Clique em duas fotos. O A4 não muda.");
+    }
+
+    renderHero();
+    renderFlavors();
+
+    document.body.addEventListener("click", (e) => {
+      const use = e.target.closest("[data-use]");
+      if (use){
+        picks[use.dataset.id] = use.dataset.use;
+        sessionStorage.setItem("r17-gallery-picks", JSON.stringify(picks));
+        toast("Marcada só nesta galeria. A4 R17 e JSON do cardápio intactos.");
+        document.querySelectorAll(`.pick[data-id="${use.dataset.id}"]`).forEach((b) => {
+          b.classList.toggle("is-picked", b.dataset.use === use.dataset.use);
+        });
+        return;
+      }
+      const open = e.target.closest("[data-open]");
+      if (open){
+        if (compareOn){
+          const cap = open.dataset.cap;
+          cmpSel.push({ url: open.dataset.open, cap });
+          if (cmpSel.length === 1) toast("Primeira foto. Clique na segunda.");
+          if (cmpSel.length >= 2){
+            document.getElementById("cmpA").src = cmpSel[0].url;
+            document.getElementById("cmpB").src = cmpSel[1].url;
+            document.getElementById("cmpACap").textContent = cmpSel[0].cap;
+            document.getElementById("cmpBCap").textContent = cmpSel[1].cap;
+            const box = document.getElementById("compare");
+            box.hidden = false; box.classList.add("is-open");
+            compareOn = false;
+            document.getElementById("compareBtn").classList.remove("is-on");
+            cmpSel = [];
+          }
+          return;
+        }
+        openLightbox(open.dataset.open, open.dataset.cap);
+      }
+    });
+    document.getElementById("lbVsCurrent").addEventListener("click", () => {
+      const s = gallery[lbIndex];
+      const pizza = PIZZAS.find((p) => p.name === s.pizza);
+      if (!pizza) return;
+      document.getElementById("cmpA").src = src(pizza.current.url);
+      document.getElementById("cmpB").src = src(s.url);
+      document.getElementById("cmpACap").textContent = pizza.name + " · Atual";
+      document.getElementById("cmpBCap").textContent = pizza.name + " · " + s.label;
+      closeOverlays();
+      const box = document.getElementById("compare");
+      box.hidden = false; box.classList.add("is-open");
+    });
+    document.getElementById("compareBtn").addEventListener("click", enterCompare);
+    document.querySelectorAll(".close").forEach((b) => b.addEventListener("click", closeOverlays));
+    document.querySelector(".nav.prev").addEventListener("click", () => { lbIndex = (lbIndex + gallery.length - 1) % gallery.length; showLb(); });
+    document.querySelector(".nav.next").addEventListener("click", () => { lbIndex = (lbIndex + 1) % gallery.length; showLb(); });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeOverlays();
+      if (!document.getElementById("lightbox").classList.contains("is-open")) return;
+      if (e.key === "ArrowLeft") { lbIndex = (lbIndex + gallery.length - 1) % gallery.length; showLb(); }
+      if (e.key === "ArrowRight") { lbIndex = (lbIndex + 1) % gallery.length; showLb(); }
+    });
+  </script>
+</body>
+</html>

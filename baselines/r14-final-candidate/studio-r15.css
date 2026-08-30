@@ -1,0 +1,157 @@
+/* 8ito A4 Studio R15 — finer gold, quiet shadows, same identity */
+
+.menu-page.r15{
+  --r15-gold:#d7b066;
+  --r15-gold-dim:rgba(215,176,102,.38);
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(56,110,88,.22),transparent 36%),
+    radial-gradient(ellipse at 50% 100%,rgba(0,0,0,.28),transparent 42%),
+    linear-gradient(180deg,#07342c 0%,#032821 46%,#021914 100%)!important;
+  box-shadow:
+    0 22px 48px rgba(0,0,0,.38),
+    inset 0 0 0 1px rgba(215,176,102,.08);
+}
+
+.r15.r13-menu-polish::before,
+.r15.r13-menu-polish::after{
+  font-size:clamp(11px,1.5vw,18px)!important;
+  color:rgba(215,176,102,.16)!important;
+  opacity:.85;
+}
+.r15.r13-menu-polish::before{top:3.2%!important;left:4.4%!important}
+.r15.r13-menu-polish::after{bottom:3.1%!important;right:4.4%!important}
+
+.r15 .menu-inner{
+  border:1.15px solid rgba(215,176,102,.72)!important;
+  border-radius:1.8%!important;
+  box-shadow:
+    inset 0 0 0 .6px rgba(246,222,170,.14),
+    inset 0 0 0 5px rgba(3,28,24,.35),
+    inset 0 18px 40px rgba(0,0,0,.10)!important;
+}
+.r15 .menu-inner::before{
+  inset:.55%!important;
+  border:.55px solid rgba(215,176,102,.18)!important;
+  border-radius:1.55%!important;
+}
+
+.r15 .menu-header{padding:.2% 0 .35%!important}
+.r15 .menu-infinity{
+  filter:drop-shadow(0 2px 7px rgba(0,0,0,.28)) drop-shadow(0 0 10px rgba(215,176,102,.18))!important;
+}
+.r15 .menu-logo{
+  text-shadow:0 3px 14px rgba(0,0,0,.28)!important;
+  color:#e0be78!important;
+}
+.r15 .menu-header::after{
+  width:18%!important;
+  height:.6px!important;
+  margin:.7% auto 0!important;
+  background:linear-gradient(90deg,transparent,rgba(215,176,102,.7),transparent)!important;
+}
+
+.r15 .menu-section h3,
+.r15 .menu-bottom-section h3,
+.r15 .r14-pizza-band h3{
+  letter-spacing:.16em!important;
+  font-weight:600!important;
+  text-shadow:0 1px 6px rgba(0,0,0,.18);
+}
+.r15 .menu-section h3::before,
+.r15 .menu-section h3::after,
+.r15 .menu-bottom-section h3::before,
+.r15 .menu-bottom-section h3::after,
+.r15 .r14-pizza-band h3::before,
+.r15 .r14-pizza-band h3::after{
+  height:.55px!important;
+  opacity:.55!important;
+}
+
+.r15 .menu-item{
+  grid-template-columns:16.5% minmax(0,1fr)!important;
+  padding:.38% 0!important;
+}
+.r15 .menu-item-image{
+  aspect-ratio:1.18/1!important;
+}
+.r15 .r14-pizza-card .r14-frame{
+  aspect-ratio:1/1!important;
+  max-width:86px;
+}
+.r15 .menu-item-leader{
+  border-bottom:.55px dotted rgba(215,176,102,.32)!important;
+}
+.r15 .menu-item-name{
+  font-weight:500!important;
+  color:#f7f0e2!important;
+}
+.r15 .menu-item-price{
+  color:#ecd29a!important;
+  font-variant-numeric:tabular-nums;
+  text-shadow:0 1px 4px rgba(0,0,0,.22);
+}
+
+.r15 .menu-item-image,
+.r15 .r14-frame,
+.r15 .beverage-icon,
+.r15 .promo-thumb{
+  border:.65px solid rgba(215,176,102,.28)!important;
+  border-radius:6px!important;
+  background:
+    radial-gradient(circle at 50% 42%,rgba(48,96,78,.28),rgba(3,28,24,.96) 72%),
+    #04221c!important;
+  box-shadow:
+    0 5px 11px rgba(0,0,0,.22),
+    inset 0 0 0 .5px rgba(255,236,190,.06),
+    inset 0 8px 14px rgba(0,0,0,.12)!important;
+}
+.r15 .menu-item-image img,
+.r15 .r14-frame img,
+.r15 .beverage-icon img,
+.r15 .promo-thumb img,
+.r15 .r8-product-img{
+  filter:drop-shadow(0 3px 5px rgba(0,0,0,.28))!important;
+  padding:8%!important;
+}
+
+.r15 .r14-pizza-band,
+.r15 .menu-bottom-section{
+  background:linear-gradient(180deg,rgba(8,46,38,.28),rgba(4,30,25,.18))!important;
+  border:.65px solid rgba(215,176,102,.34)!important;
+  border-radius:9px!important;
+  box-shadow:
+    0 6px 16px rgba(0,0,0,.12),
+    inset 0 1px 0 rgba(255,236,190,.05)!important;
+}
+.r15 .r14-pizza-card span,
+.r15 .beverage-card span{
+  text-shadow:0 1px 4px rgba(0,0,0,.2);
+}
+.r15 .promo-price{
+  margin-top:5%!important;
+  padding:.12em .2em 0!important;
+  border:0!important;
+  border-bottom:.65px solid rgba(215,176,102,.55)!important;
+  border-radius:0!important;
+  letter-spacing:.03em;
+}
+.r15 .menu-footer{
+  letter-spacing:.12em!important;
+  text-shadow:0 1px 6px rgba(0,0,0,.2);
+  opacity:.92;
+}
+.r15 .menu-footer::before,
+.r15 .menu-footer::after{
+  width:8%!important;
+  height:.55px!important;
+  opacity:.7;
+}
+
+@media print{
+  .r15 .menu-item-image img,
+  .r15 .r14-frame img,
+  .r15 .beverage-icon img,
+  .r15 .promo-thumb img{
+    filter:drop-shadow(0 2px 3px rgba(0,0,0,.18))!important;
+  }
+}

@@ -1,0 +1,321 @@
+/* 8ito A4 Studio R19 — editorial ornamental system
+   Presentation only. Does not change products, prices, images, or A4 size.
+   Ornaments use solid color / borders so PNG/JPG export keeps them
+   (html2canvas strips CSS gradients). */
+
+.menu-page.r19{
+  --r19-gold:#d4b06a;
+  --r19-gold-ink:#e8d09a;
+  --r19-cream:#f7f1e4;
+  --r19-hair:rgba(212,176,106,.38);
+  --r19-hair-strong:rgba(212,176,106,.62);
+  background:
+    radial-gradient(ellipse at 50% -4%,rgba(62,118,96,.16),transparent 34%),
+    radial-gradient(ellipse at 50% 108%,rgba(0,0,0,.32),transparent 44%),
+    linear-gradient(180deg,#08362e 0%,#032821 52%,#021813 100%)!important;
+}
+.menu-page.r19.r13-menu-polish::before,
+.menu-page.r19.r13-menu-polish::after,
+.menu-page.r19.r15.r13-menu-polish::before,
+.menu-page.r19.r15.r13-menu-polish::after{content:none!important;display:none!important}
+
+.r19 .menu-inner{
+  border:.7px solid var(--r19-hair-strong)!important;
+  border-radius:1.15%!important;
+  box-shadow:
+    inset 0 0 0 .45px rgba(246,230,186,.12),
+    inset 0 0 0 4.5px rgba(2,24,20,.42)!important;
+  padding:1.7% 2.05% 1.25%!important;
+  gap:.72%!important;
+}
+.r19 .menu-inner::before{
+  inset:.62%!important;
+  border:.4px solid rgba(212,176,106,.14)!important;
+  border-radius:.95%!important;
+}
+
+/* Interrupted-corner punctuation — no extra flow height */
+.r19-corner{
+  position:absolute;
+  width:13px;
+  height:13px;
+  pointer-events:none;
+  z-index:3;
+}
+.r19-c-tl{top:.85%;left:.85%;border-top:.7px solid var(--r19-gold);border-left:.7px solid var(--r19-gold)}
+.r19-c-tr{top:.85%;right:.85%;border-top:.7px solid var(--r19-gold);border-right:.7px solid var(--r19-gold)}
+.r19-c-bl{bottom:.85%;left:.85%;border-bottom:.7px solid var(--r19-gold);border-left:.7px solid var(--r19-gold)}
+.r19-c-br{bottom:.85%;right:.85%;border-bottom:.7px solid var(--r19-gold);border-right:.7px solid var(--r19-gold)}
+
+.r19 .menu-header{padding:.15% 0 .05%!important}
+.r19 .menu-header::after{content:none!important;display:none!important}
+.r19-brand-rule{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.45em;
+  margin:.5% auto 0;
+  width:36%;
+}
+.r19-brand-rule .r19-rule{flex:1;height:.55px;background:var(--r19-hair);max-width:none}
+.r19 .menu-infinity{
+  height:.52em!important;
+  font-size:clamp(22px,3.8vw,44px)!important;
+  opacity:.92;
+  filter:none!important;
+}
+.r19 .menu-logo{
+  font-size:clamp(26px,4.2vw,46px)!important;
+  font-weight:500!important;
+  letter-spacing:.085em!important;
+  color:#e4c37a!important;
+  text-shadow:none!important;
+}
+.r19 .menu-tagline{
+  letter-spacing:.46em!important;
+  font-size:clamp(6.5px,.82vw,10px)!important;
+  margin-top:.4%!important;
+  color:#e2c894!important;
+  opacity:.78!important;
+  font-weight:400!important;
+  text-transform:lowercase;
+}
+
+/* Section titles: line + lozenge + kicker — one system */
+.r19-heading{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:.38em!important;
+  margin:0 0 .42%!important;
+  min-height:0!important;
+}
+.r19-heading::before,
+.r19-heading::after{content:none!important;display:none!important}
+.r19-kicker{
+  font:600 clamp(8.2px,1.12vw,13.5px) Georgia,"Palatino Linotype",serif!important;
+  letter-spacing:.22em!important;
+  color:var(--r19-gold)!important;
+  text-shadow:none!important;
+  white-space:nowrap;
+}
+.r19-rule{
+  flex:1 1 10%;
+  max-width:34%;
+  height:.6px;
+  background:var(--r19-hair);
+}
+.r19-loz{
+  width:5.5px;
+  height:5.5px;
+  flex:0 0 5.5px;
+  background:var(--r19-gold);
+  transform:rotate(45deg);
+  opacity:.9;
+}
+
+.r19 .menu-columns{
+  position:relative;
+  gap:3.2%!important;
+  padding-bottom:.55%!important;
+  align-items:stretch!important;
+}
+.r19 #leftMenuColumn{position:relative}
+.r19 #leftMenuColumn::after{
+  content:"∞";
+  position:absolute;
+  left:0;right:0;
+  bottom:3.5%;
+  text-align:center;
+  color:rgba(212,176,106,.30);
+  font:400 15px Georgia,serif;
+  letter-spacing:0;
+  line-height:1;
+  pointer-events:none;
+}
+.r19 .menu-columns::before{
+  content:"";
+  position:absolute;
+  top:10%;
+  bottom:6%;
+  left:50%;
+  width:.55px;
+  background:rgba(212,176,106,.16);
+  pointer-events:none;
+}
+.r19 .menu-stack{gap:.28%!important}
+
+.r19 .menu-item{
+  grid-template-columns:15.2% minmax(0,1fr)!important;
+  gap:2.1%!important;
+  padding:.18% 0!important;
+  border-bottom:.55px solid rgba(212,176,106,.10)!important;
+}
+.r19 .menu-item:last-child{border-bottom:0!important}
+.r19 .menu-item-name{
+  font:500 clamp(8px,1.05vw,13px) Georgia,serif!important;
+  letter-spacing:.015em!important;
+  color:var(--r19-cream)!important;
+  line-height:1.14!important;
+  max-width:74%;
+}
+.r19 .menu-item-leader{
+  border-bottom:.55px dotted rgba(212,176,106,.34)!important;
+  transform:translateY(-3px);
+}
+.r19 .menu-item-price{
+  color:var(--r19-gold-ink)!important;
+  font:600 clamp(8.4px,1.08vw,13.5px) Georgia,serif!important;
+  letter-spacing:.03em;
+  text-shadow:none!important;
+}
+
+/* Editorial frames — not app thumbnails */
+.r19 .menu-item-image,
+.r19 .r14-frame,
+.r19 .beverage-icon,
+.r19 .promo-thumb{
+  border-radius:2px!important;
+  border:.55px solid rgba(212,176,106,.30)!important;
+  box-shadow:
+    0 2px 7px rgba(0,0,0,.16),
+    inset 0 0 0 .4px rgba(255,236,198,.05)!important;
+  background:#04241e!important;
+}
+.r19 .menu-item-image img,
+.r19 .r14-frame img,
+.r19 .beverage-icon img,
+.r19 .promo-thumb img,
+.r19 .r8-product-img{
+  padding:6.5%!important;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.22))!important;
+  border-radius:0!important;
+}
+
+.r19 .r14-pizza-band,
+.r19 .menu-bottom-section{
+  background:rgba(6,40,33,.22)!important;
+  border:.55px solid rgba(212,176,106,.28)!important;
+  border-radius:3px!important;
+  box-shadow:none!important;
+  padding:.38% 1.05% .48%!important;
+}
+.r19 .r14-pizza-band h3,
+.r19 .menu-bottom-section h3{margin-bottom:.38%!important}
+.r19 .r14-pizza-card .r14-frame{
+  aspect-ratio:1/1!important;
+  max-width:82px;
+  border-radius:2px!important;
+}
+.r19 .r14-pizza-card strong{
+  font:500 clamp(7px,.92vw,11px) Georgia,serif!important;
+  letter-spacing:.02em;
+  min-height:1.9em;
+}
+.r19 .r14-pizza-card span{
+  font:600 clamp(8px,1.02vw,12.5px) Georgia,serif!important;
+  color:var(--r19-gold-ink)!important;
+  letter-spacing:.03em;
+}
+
+.r19 .beverage-section{
+  border-color:rgba(212,176,106,.32)!important;
+}
+.r19 .beverage-grid{gap:0!important}
+.r19 .beverage-card{
+  border-right:0!important;
+  padding:0 3.5%!important;
+  position:relative;
+}
+.r19 .beverage-card:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  top:22%;
+  bottom:18%;
+  right:0;
+  width:5px;
+  height:5px;
+  margin:auto 0;
+  background:rgba(212,176,106,.45);
+  transform:rotate(45deg);
+}
+.r19 .beverage-card:last-child{border-right:0!important}
+.r19 .beverage-icon{
+  width:66%!important;
+  max-width:86px!important;
+  aspect-ratio:1.08/1!important;
+  margin:0 auto 3.2%!important;
+}
+.r19 .beverage-card strong{
+  font:500 clamp(7.2px,.96vw,11.5px) Georgia,serif!important;
+  min-height:2em!important;
+  letter-spacing:.01em;
+}
+.r19 .beverage-card span{
+  font:600 clamp(8px,1.04vw,12.5px) Georgia,serif!important;
+  color:var(--r19-gold-ink)!important;
+}
+
+.r19 .promo-section{
+  border:.75px solid rgba(212,176,106,.48)!important;
+  background:rgba(8,46,38,.28)!important;
+}
+.r19 .promo-card{
+  border-right:.55px solid rgba(212,176,106,.20)!important;
+  gap:6%!important;
+}
+.r19 .promo-card strong{
+  font:500 clamp(7px,.92vw,11px) Georgia,serif!important;
+  letter-spacing:.01em;
+}
+.r19 .promo-price{
+  margin-top:5%!important;
+  padding:.08em 0 0!important;
+  border:0!important;
+  border-bottom:.7px solid var(--r19-gold)!important;
+  border-radius:0!important;
+  font:600 clamp(8.2px,1.06vw,13px) Georgia,serif!important;
+  letter-spacing:.04em;
+  color:var(--r19-gold-ink)!important;
+}
+
+.r19 .menu-footer{
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  gap:.7em;
+  color:#ddc28a!important;
+  letter-spacing:.16em!important;
+  font-size:clamp(6.8px,.84vw,10.5px)!important;
+  font-style:italic;
+  padding-top:.05%!important;
+  opacity:.88;
+  text-shadow:none!important;
+}
+.r19 .menu-footer::before,
+.r19 .menu-footer::after{
+  content:""!important;
+  width:9%!important;
+  height:.55px!important;
+  margin:0!important;
+  background:var(--r19-hair)!important;
+  display:inline-block!important;
+  vertical-align:middle;
+}
+
+.r19 .menu-item.is-selected,
+.r19 .r14-pizza-card.is-selected,
+.r19 .beverage-card.is-selected,
+.r19 .promo-card.is-selected{
+  outline:.55px solid rgba(212,176,106,.4);
+  outline-offset:1px;
+  border-radius:2px;
+  background:transparent;
+}
+
+@media print{
+  .r19 .menu-item.is-selected,
+  .r19 .r14-pizza-card.is-selected,
+  .r19 .beverage-card.is-selected,
+  .r19 .promo-card.is-selected{outline:0!important}
+}

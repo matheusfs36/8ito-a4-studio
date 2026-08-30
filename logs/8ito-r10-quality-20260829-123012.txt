@@ -1,0 +1,31 @@
+8ITO R10 QUALITY CURATOR 20260829-123012
+Vision: qwen3-vl:4b-instruct-q4_K_M
+Gate: 84
+Passed initial: 10
+Rejected initial: 13
+Regenerated accepted: 4
+Held without image: 9
+
+ 85 OK | Empanadas | assets/uploads/found-r3/empanadas.png | Imagem de empanada com textura realista e cozimento natural, apresentando um corte que revela o recheio. O produto está completo e centralizado, sem elementos gráficos ou texto. A composição é limpa, mas a escala e o fundo são neutros, não se alinhando perfeitamente com a identidade da marca.
+ 95 OK | Coxinhas | assets/generated/8ito-ai-1788018107-3afa0350.png | Imagem de coxinhas reais, com textura e cozimento naturais, sobre fundo verde escuro. Produto inteiro visível, sem elementos gráficos ou cortes estranhos. Composição limpa e equilibrada, adequada para cardápio premium.
+ 75 HOLD | Pão de Batata | <SEM IMAGEM> | Nenhum candidato atingiu o gate visual; slot mantido vazio para não publicar imagem estranha.
+ 95 OK | Pão de Queijo | assets/uploads/found-r3/pao-de-queijo.png | Imagem de alta qualidade, com pão de queijo realista e natural. O produto está inteiro e em grupo pequeno, sem elementos gráficos ou textuais. Composição limpa e equilibrada, ideal para cardápio premium.
+ 95 OK | Croissant Presunto e Queijo | assets/uploads/found-r3/croissant-presunto-queijo.png | Imagem de alta qualidade, com croissant presunto e queijo inteiro, cortado ao meio para mostrar o recheio. Textura realista da massa e dos ingredientes, fundo sólido e limpo. Perfeito para cardápio premium.
+ 60 HOLD | Pizza Individual Portuguesa | <SEM IMAGEM> | Nenhum candidato atingiu o gate visual; slot mantido vazio para não publicar imagem estranha.
+ 85 OK | Pizza Individual Calabresa | assets/generated/8ito-ai-1788019028-4dc83df8.png | Imagem de pizza individual calabresa com borda visível e textura realista, em fundo escuro. A composição é limpa e focada no produto, mas a iluminação e o fundo não se alinham perfeitamente com a identidade da marca 8ito.
+  0 HOLD | Pizza Individual Frango | <SEM IMAGEM> | Nenhum candidato atingiu o gate visual; slot mantido vazio para não publicar imagem estranha.
+  0 HOLD | Pizza Individual Queijo | <SEM IMAGEM> | Nenhum candidato atingiu o gate visual; slot mantido vazio para não publicar imagem estranha.
+  0 HOLD | Alfajor Chocolate | <SEM IMAGEM> | Nenhum candidato atingiu o gate visual; slot mantido vazio para não publicar imagem estranha.
+  0 HOLD | Alfajor Maicena | <SEM IMAGEM> | Nenhum candidato atingiu o gate visual; slot mantido vazio para não publicar imagem estranha.
+ 95 OK | Cookies | assets/uploads/found-r3/cookies.png | Imagem de cookies com chocolate, natural e realista, sem elementos gráficos ou textuais. Composição limpa e equilibrada, ideal para cardápio premium.
+  0 HOLD | Tarteletes | <SEM IMAGEM> | Nenhum candidato atingiu o gate visual; slot mantido vazio para não publicar imagem estranha.
+  0 HOLD | Croissant Doce de Leite | <SEM IMAGEM> | Nenhum candidato atingiu o gate visual; slot mantido vazio para não publicar imagem estranha.
+ 95 OK | Croissant Chocolate | assets/generated/8ito-ai-1788016952-6641deb5.png | Croissant de chocolate com textura realista e recheio derretido, apresentado isoladamente em fundo verde escuro elegante. Imagem limpa, sem elementos gráficos ou texto, com produto inteiro e silhueta completa.
+ 95 OK | Bolo de Laranja | assets/generated/8ito-ai-1788016990-f6de7756.png | Bolo de laranja com textura realista, decoração natural e fundo elegante do 8ito. Imagem limpa, centralizada e sem elementos gráficos ou cortes.
+ 95 OK | Café Espresso | assets/uploads/found-r3/cafe-espresso.png | Imagem de alta qualidade do café espresso em xícara dupla de vidro, com textura realista da espuma e vapor, sobre fundo sólido. Sem elementos gráficos ou distrações, ideal para cardápio premium.
+ 95 OK | Cafés Especiais | assets/uploads/found-r3/cafes-especiais.png | Imagem de alta qualidade, com café em xícara completa e naturalmente realista. Sem elementos gráficos ou distrações, ideal para cardápio premium.
+ 95 OK | Café Passado | assets/generated/8ito-ai-1788020090-0fbb29e8.png | Imagem de alta qualidade, com café quente em xícara transparente, vapor natural e fundo discreto. Produto inteiro e limpo, sem elementos gráficos ou estranhos.
+ 95 OK | Café Passado com Leite | assets/generated/8ito-ai-1788020229-c5c89fa9.png | Imagem de alta qualidade, com café passado com leite em xícara transparente, vapor saindo naturalmente. Foco no produto, sem elementos gráficos ou distrações. Fundo verde escuro complementa a identidade da marca.
+ 75 HOLD | Promo Manhã · Pão de Queijo + Café Passado | <SEM IMAGEM> | Nenhum candidato atingiu o gate visual; slot mantido vazio para não publicar imagem estranha.
+ 95 OK | Promo Almoço · Empanada + Refrigerante | assets/generated/8ito-ai-1788017034-7721acd9.png | Imagem de alta qualidade, com empanada e refrigerante na composição correta. Produto inteiro visível, fundo elegante e limpo, sem elementos gráficos ou textuais. Perfeito para cardápio premium.
+ 85 OK | Promo Tarde Doce · Cookie + Café à Escolha | assets/generated/8ito-ai-1788017059-5fc68a86.png | Imagem de alta qualidade, com cookie e café realistas, em fundo verde escuro. Produto inteiro visível, sem elementos gráficos ou textuais. Apenas os itens da promoção estão presentes, conforme especificado.

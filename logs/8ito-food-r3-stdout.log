@@ -1,0 +1,11 @@
+8ITO A4 Studio 0001 R3 -> http://127.0.0.1:8794/
+Ollama: http://127.0.0.1:11434
+ComfyUI: http://127.0.0.1:8188
+Food checkpoint: sd_xl_base_1.0.safetensors
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 400 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 400 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 400 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 400 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 400 -

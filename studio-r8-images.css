@@ -1,0 +1,81 @@
+:root{--r8-art-w:22%}
+
+/* R8: product images are presented as complete assets. No blind center crop. */
+.menu-item{grid-template-columns:var(--r8-art-w) minmax(0,1fr) auto!important}
+.menu-item-image,
+.beverage-icon,
+.promo-thumb{
+  background:transparent!important;
+  border-radius:0!important;
+  overflow:visible!important;
+  box-shadow:none!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+.menu-item-image{aspect-ratio:1.45/1!important;min-width:0}
+.beverage-icon{aspect-ratio:1.2/1!important;width:54%!important;margin:0 auto 3%!important}
+.promo-card .promo-thumb{aspect-ratio:1.45/1!important;width:58%!important;margin:0 auto 2%!important}
+
+.menu-item-image img,
+.beverage-icon img,
+.promo-thumb img,
+.r8-product-img{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  display:block!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  border-radius:0!important;
+  clip-path:none!important;
+  mask:none!important;
+  -webkit-mask:none!important;
+  transform-origin:center center!important;
+  transform:translate(var(--r8-x,0%),var(--r8-y,0%)) scale(var(--r8-scale,1))!important;
+  filter:drop-shadow(0 3px 5px rgba(0,0,0,.18));
+}
+
+.menu-item[data-image-source="separated"] .menu-item-image,
+.beverage-card[data-image-source="separated"] .beverage-icon,
+.promo-card[data-image-source="separated"] .promo-thumb{
+  overflow:visible!important;
+}
+
+.menu-item[data-image-source="generated"] .menu-item-image,
+.promo-card[data-image-source="generated"] .promo-thumb{
+  border-radius:0!important;
+  aspect-ratio:1.45/1!important;
+  width:auto!important;
+  box-shadow:none!important;
+}
+
+/* Product browser/editor should show the whole asset too. */
+.product-list-item .thumb{
+  background-size:contain!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  border-radius:8px!important;
+}
+.image-preview{
+  background-size:contain!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  border-radius:10px!important;
+}
+
+/* Keep room for complete silhouettes instead of shrinking them into circles. */
+.menu-page.r6-dense{--r8-art-w:20%}
+.menu-page.r6-compact{--r8-art-w:18.5%}
+.menu-page.r6-ultra{--r8-art-w:17%}
+
+@media print{
+  .menu-item-image img,.beverage-icon img,.promo-thumb img,.r8-product-img{
+    object-fit:contain!important;
+    clip-path:none!important;
+    mask:none!important;
+    -webkit-mask:none!important;
+  }
+}

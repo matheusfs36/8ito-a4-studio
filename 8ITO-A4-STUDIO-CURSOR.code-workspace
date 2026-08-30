@@ -1,0 +1,21 @@
+{
+    "folders":  [
+                    {
+                        "name":  "8ITO LIVE LAB",
+                        "path":  "C:\\tdz-os\\content-labs\\8ITO-A4-STUDIO-0001"
+                    },
+                    {
+                        "name":  "TDZ ORCHESTRATOR GIT",
+                        "path":  "C:\\tdz-os\\tdz-orchestrator"
+                    }
+                ],
+    "settings":  {
+                     "files.autoSave":  "afterDelay",
+                     "files.autoSaveDelay":  1200,
+                     "editor.formatOnSave":  false,
+                     "terminal.integrated.defaultProfile.windows":  "PowerShell",
+                     "workbench.startupEditor":  "none",
+                     "explorer.confirmDelete":  true,
+                     "git.autofetch":  true
+                 }
+}

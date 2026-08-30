@@ -1,0 +1,23 @@
+Leia primeiro, nesta ordem:
+1. .cursor/rules/8ito-a4-studio.mdc
+2. .cursor-handoff/CURSOR-START-HERE-2026-08-29.md
+3. .cursor-handoff/CURSOR-CURRENT-STATE-2026-08-29.json
+
+Depois assuma a continuaÃ§Ã£o prÃ¡tica do 8ITO A4 STUDIO 0001. Este Ã© o PROGRAMA LOCAL de cardÃ¡pio A4 editÃ¡vel, nÃ£o o site pÃºblico.
+
+Antes de alterar qualquer arquivo, inspecione o estado vivo em C:\tdz-os\content-labs\8ITO-A4-STUDIO-0001, compare com o branch agent/8ito-a4-studio-0001 do repo matheusfs36/tdz-orchestrator e faÃ§a backup do estado vivo.
+
+Prioridades desta sessÃ£o:
+- abandonar R12/R12-R2 dual-critic como caminho crÃ­tico; se algum processo desse tipo estiver rodando, pare-o;
+- melhorar visualmente o cardÃ¡pio A4 no programa: hierarquia, espaÃ§amentos, molduras, tÃ­tulos, preÃ§os, bebidas, promoÃ§Ãµes e densidade, sem overlap;
+- cada produto deve usar UMA imagem independente; nunca recortar do cardÃ¡pio pronto CARDAPIO 8ITO 270826.jpeg;
+- procurar e priorizar assets reais separados jÃ¡ existentes no PC;
+- quando faltar imagem, usar Juggernaut XL v9/ComfyUI local para gerar 3 ou 4 candidatos e criar uma galeria/contact sheet para eu escolher, em vez de publicar automaticamente;
+- produto inteiro, centralizado, com margem, sem texto/preÃ§o/logo/QR, sem crop, sem CGI/plÃ¡stico/uncanny;
+- manter imageFit=contain, imageMask=none, offsets 0 e escala 1 como baseline;
+- preservar ediÃ§Ã£o de nome, preÃ§o, descriÃ§Ã£o, categoria, imagem e promoÃ§Ãµes;
+- preservar A4 210x297 mm e export PDF/PNG/JPG;
+- implementar e validar de verdade, nÃ£o apenas me dar um plano;
+- depois das mudanÃ§as, abrir/atualizar o preview e me mostrar claramente o que mudou e o que ainda precisa de decisÃ£o visual minha.
+
+Pode comeÃ§ar agora e seguir autonomamente pela melhor ordem tÃ©cnica.

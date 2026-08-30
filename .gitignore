@@ -1,0 +1,25 @@
+# Local runtime
+__pycache__/
+*.pyc
+*.pyo
+.env
+.env.*
+*.local.env
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local snapshots and editor debris
+backups/
+*.r7-backup*
+index.html.*backup*
+
+# TV loops exceed GitHub file limits (100 MB)
+*.mp4
+*.mov
+*.avi
+
+# Optional local caches
+.cursor/

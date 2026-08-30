@@ -1,0 +1,168 @@
+/* R21 — uniform type scale + no text-on-text overlap.
+   Presentation only. Does not change products, prices, images, or A4 size. */
+
+.menu-page.r19{
+  --type-brand:40px;
+  --type-tagline:8px;
+  --type-kicker:9.5px;
+  --type-name:12px;
+  --type-price:12px;
+  --type-footer:8px;
+  --type-cream:#f7f1e4;
+  --type-gold:#e8d09a;
+  --type-kicker-ink:#d4b06a;
+}
+
+/* Brand */
+.r19 .menu-logo{
+  font:500 var(--type-brand)/1 Georgia,"Palatino Linotype",serif!important;
+  letter-spacing:.08em!important;
+  color:#e4c37a!important;
+}
+.r19 .menu-tagline{
+  font:400 var(--type-tagline)/1.2 Georgia,serif!important;
+  letter-spacing:.24em!important;
+  color:#e2c894!important;
+  opacity:.82!important;
+  margin-top:.35%!important;
+  white-space:nowrap;
+}
+
+/* Section kickers — one size for every band */
+.r19-kicker,
+.r19 .r19-kicker{
+  font:600 var(--type-kicker)/1 Georgia,"Palatino Linotype",serif!important;
+  letter-spacing:.2em!important;
+  color:var(--type-kicker-ink)!important;
+  white-space:nowrap!important;
+  text-transform:uppercase;
+}
+
+/* List rows: name | leader | price — price never shares the name box */
+.r19 .menu-item-copy{
+  display:flex!important;
+  align-items:last baseline!important;
+  gap:6px!important;
+  min-width:0!important;
+}
+.r19 .menu-item-name,
+.r19 .r14-pizza-card strong,
+.r19 .beverage-card strong,
+.r19 .promo-card strong{
+  font:500 var(--type-name)/1.22 Georgia,serif!important;
+  letter-spacing:.01em!important;
+  color:var(--type-cream)!important;
+  font-weight:500!important;
+  text-transform:none!important;
+  text-wrap:unset!important;
+  overflow-wrap:break-word!important;
+  word-break:normal!important;
+  hyphens:manual!important;
+  position:relative;
+  z-index:2;
+}
+.r19 .menu-item-name{
+  flex:0 1 auto!important;
+  min-width:0!important;
+  max-width:none!important;
+}
+.r19 .menu-item-leader{
+  flex:1 1 12px!important;
+  min-width:12px!important;
+  height:0!important;
+  border-bottom:.55px dotted rgba(212,176,106,.34)!important;
+  transform:none!important;
+  align-self:last baseline;
+  position:relative;
+  z-index:1;
+  pointer-events:none;
+}
+.r19 .menu-item-price,
+.r19 .r14-pizza-card span,
+.r19 .beverage-card span,
+.r19 .promo-price{
+  font:600 var(--type-price)/1.22 Georgia,serif!important;
+  letter-spacing:.02em!important;
+  color:var(--type-gold)!important;
+  font-variant-numeric:tabular-nums!important;
+  text-shadow:none!important;
+  white-space:nowrap!important;
+  position:relative;
+  z-index:2;
+}
+.r19 .menu-item-price{
+  flex:0 0 auto!important;
+  padding:0 0 0 1px!important;
+}
+
+/* Pizza / beverage: stacked name then price, no reserved empty min-height */
+.r19 .r14-pizza-card{
+  padding:0 6px!important;
+  min-width:0!important;
+}
+.r19 .r14-pizza-card strong,
+.r19 .beverage-card strong{
+  min-height:0!important;
+  max-height:2.44em;
+  overflow:hidden;
+  margin:0 auto;
+  padding:0 4px;
+  display:-webkit-box!important;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}
+.r19 .r14-pizza-card span,
+.r19 .beverage-card span{
+  display:block!important;
+  margin-top:.22em!important;
+}
+
+/* Beverage diamonds stay in the gutter, not on the label */
+.r19 .beverage-card{
+  padding:0 7%!important;
+  min-width:0!important;
+}
+.r19 .beverage-card:not(:last-child)::after{
+  right:-2.5px;
+}
+
+/* Promo: two-line name block so all three cards share height; price below */
+.r19 .promo-card{
+  align-items:center!important;
+  min-width:0!important;
+}
+.r19 .promo-card > div{
+  min-width:0!important;
+  display:flex!important;
+  flex-direction:column;
+  justify-content:center;
+  gap:.28em;
+  overflow:visible;
+}
+.r19 .promo-card strong{
+  display:-webkit-box!important;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+  min-height:2.44em;
+  max-height:2.44em;
+}
+.r19 .promo-price{
+  margin-top:0!important;
+  align-self:flex-start;
+}
+
+.r19 .menu-footer,
+.r19 .r19-footcopy{
+  font:italic 400 var(--type-footer)/1.2 Georgia,serif!important;
+  letter-spacing:.1em!important;
+  color:#e2c894!important;
+}
+
+/* Watermark stays in leftover column space, never over a row */
+.r19 #leftMenuColumn::after{
+  bottom:1.2%!important;
+  z-index:0;
+  font-size:13px!important;
+  opacity:.85;
+}

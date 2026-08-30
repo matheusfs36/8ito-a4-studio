@@ -1,0 +1,36 @@
+8ito A4 · R18 pizza reference hunt
+Data: 2026-08-29
+Baseline: R17 PRINT POLISH CANDIDATE (não alterada)
+
+ESCOPO
+Pastas: Infinito Café (Pablo), 8ITO-A4-STUDIO original/uploads, Desktop, Downloads, Pictures, OneDrive, tdz-os/data.
+Excluído de propósito: CARDAPIO 8ITO 270826.jpeg e qualquer crop; gerações R11–R17; screenshots; flyers.
+
+ACHADOS COM NOME pizza / portuguesa / calabresa
+Nenhum ficheiro de foto de produto com esses nomes fora das gerações do lab.
+
+CATÁLOGO INFINITO (fotos reais do negócio)
+C:\Users\mathe\Documents\PROJETOS ARQUITETURA\PABLO\PROJETO INFINITO CAFE\05_App_Site\...
+Produtos presentes: empanadas, coxinha, pães, croissants, cookies, tartelete, cafés, copos de marca.
+Nenhuma imagem de pizza portuguesa ou calabresa.
+
+ASSETS ORIGINAIS NO STUDIO
+C:\tdz-os\content-labs\8ITO-A4-STUDIO-0001\assets\products\original\
+Mesmo conjunto (salgados/doces/cafés/promos). Sem pizza.
+
+DESKTOP / DOWNLOADS / PICTURES / ONEDRIVE
+Sem ficheiros cujo nome indique pizza, portuguesa ou calabresa.
+
+GERAÇÕES ANTERIORES (lab)
+Várias PNG em assets/generated (r11/r15/r16/r17).
+Sabor: portuguesa ou calabresa conforme prefixo.
+Confiança: n/a (são gerações, não foto real).
+Usar como referência: NÃO — já rejeitadas ou artificiais.
+
+CARDÁPIO OFICIAL
+CARDAPIO 8ITO 270826.jpeg — excluído. Não recortar.
+
+CONCLUSÃO
+Referências reais úteis para Portuguesa: 0
+Referências reais úteis para Calabresa: 0
+Geração R18 segue só por identidade semântica (pizzaria brasileira) + fundo esmeralda 8ito, sem img2img de asset rejeitado e sem crop do cardápio.

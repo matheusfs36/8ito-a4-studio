@@ -1,0 +1,163 @@
+{
+  "preview": "C:\\tdz-os\\content-labs\\8ITO-A4-STUDIO-0001\\TV_R11_PABLO\\06_EXPORT\\8ITO-TV-PABLO-R12-FOTOS-NOVAS-PREVIEW.mp4",
+  "duration_sec": 81.3,
+  "fps": 30,
+  "size": "1920x1080",
+  "shots": [
+    {
+      "key": "open",
+      "seconds": 3.0,
+      "motion": "in"
+    },
+    {
+      "key": "S_ABERTURA",
+      "seconds": 2.6,
+      "motion": "out"
+    },
+    {
+      "key": "espresso",
+      "seconds": 3.2,
+      "motion": "in"
+    },
+    {
+      "key": "pao",
+      "seconds": 3.2,
+      "motion": "out"
+    },
+    {
+      "key": "cappuccino",
+      "seconds": 3.1,
+      "motion": "in"
+    },
+    {
+      "key": "croissant",
+      "seconds": 3.2,
+      "motion": "out"
+    },
+    {
+      "key": "S_FEITO_AQUI",
+      "seconds": 2.2,
+      "motion": "in"
+    },
+    {
+      "key": "P20",
+      "seconds": 2.1,
+      "motion": "in"
+    },
+    {
+      "key": "P21",
+      "seconds": 2.0,
+      "motion": "out"
+    },
+    {
+      "key": "P03",
+      "seconds": 2.2,
+      "motion": "in"
+    },
+    {
+      "key": "P10",
+      "seconds": 2.1,
+      "motion": "out"
+    },
+    {
+      "key": "P11",
+      "seconds": 2.2,
+      "motion": "in"
+    },
+    {
+      "key": "P01",
+      "seconds": 2.4,
+      "motion": "out"
+    },
+    {
+      "key": "P04",
+      "seconds": 3.6,
+      "motion": "in"
+    },
+    {
+      "key": "P18",
+      "seconds": 3.5,
+      "motion": "out"
+    },
+    {
+      "key": "P13",
+      "seconds": 3.5,
+      "motion": "in"
+    },
+    {
+      "key": "P07",
+      "seconds": 3.4,
+      "motion": "out"
+    },
+    {
+      "key": "P09",
+      "seconds": 3.4,
+      "motion": "in"
+    },
+    {
+      "key": "P17",
+      "seconds": 3.2,
+      "motion": "out"
+    },
+    {
+      "key": "P12",
+      "seconds": 3.2,
+      "motion": "in"
+    },
+    {
+      "key": "P14",
+      "seconds": 3.0,
+      "motion": "out"
+    },
+    {
+      "key": "P05",
+      "seconds": 2.8,
+      "motion": "in"
+    },
+    {
+      "key": "S_COMPARTILHAR",
+      "seconds": 2.2,
+      "motion": "out"
+    },
+    {
+      "key": "P02",
+      "seconds": 3.2,
+      "motion": "in"
+    },
+    {
+      "key": "P19",
+      "seconds": 3.0,
+      "motion": "out"
+    },
+    {
+      "key": "P16",
+      "seconds": 3.4,
+      "motion": "in"
+    },
+    {
+      "key": "alfajor",
+      "seconds": 3.1,
+      "motion": "out"
+    },
+    {
+      "key": "torta",
+      "seconds": 3.2,
+      "motion": "in"
+    },
+    {
+      "key": "S_INSTAGRAM",
+      "seconds": 4.4,
+      "motion": "out"
+    },
+    {
+      "key": "close_logo",
+      "seconds": 2.6,
+      "motion": "in"
+    },
+    {
+      "key": "S_ENCERRAMENTO",
+      "seconds": 3.6,
+      "motion": "out"
+    }
+  ]
+}

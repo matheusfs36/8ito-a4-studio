@@ -1,0 +1,41 @@
+8ITO A4 Studio 0001 R4 -> http://127.0.0.1:8794/
+Ollama: http://127.0.0.1:11434
+ComfyUI: http://127.0.0.1:8188
+Food checkpoint: sd_xl_base_1.0.safetensors
+Transport: UTF-8 + Windows PowerShell legacy fallback
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/base HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/autopilot-product HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "POST /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /autopilot-r3.js HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /styles.css HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /app.js HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/project HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/empanadas.png HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/coxinhas.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/pao-de-batata.png HTTP/1.1" 200 -
+
+[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/croissant-presunto-e-queijo.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/pao-de-queijo.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1787937216-d888b7c0.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1787937242-4ccc7a38.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1787937366-975db383.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/generated/8ito-ai-1787937326-bbc209f4.png HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/alfajor-chocolate.png HTTP/1.1" 200 -
+
+[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/alfajor-maicena.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/cookies.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/tarteletes.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/croissant-chocolate.png HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/croissant-doce-de-leite.png HTTP/1.1" 200 -
+
+[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/bolo-de-laranja.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/cafe-espresso.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/cafes-especiais.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/cafe-passado.png HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /assets/uploads/bootstrap/cafe-passado-com-leite.png HTTP/1.1" 200 -

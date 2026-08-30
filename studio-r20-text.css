@@ -1,0 +1,87 @@
+/* R20 — on-canvas text editing (Canva-like). Studio chrome only; hidden in print/export. */
+
+.r20-text-bar{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px;
+  padding:7px 10px;
+  margin:8px 0 0;
+  border:1px solid #36534b;
+  border-radius:10px;
+  background:#0c1a17;
+  color:#e6d7b4;
+  font-size:11px;
+}
+.r20-text-bar[hidden]{display:none!important}
+.r20-text-bar .r20-label{
+  color:#c9a227;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-size:9px;
+  margin-right:4px;
+}
+.r20-text-bar button,
+.r20-text-bar select{
+  border:1px solid #3d5c53;
+  background:#132420;
+  color:#f3ead9;
+  border-radius:6px;
+  padding:4px 8px;
+  font-size:11px;
+  min-height:26px;
+}
+.r20-text-bar button.is-on{
+  border-color:#c9a227;
+  color:#e8d09a;
+  background:#1a2e28;
+}
+.r20-hint{
+  font-size:11px;
+  color:#9fb4ad;
+  margin-left:auto;
+}
+
+#menuPage [data-edit]{
+  cursor:text;
+  border-radius:2px;
+  outline:1px solid transparent;
+  outline-offset:2px;
+  transition:outline-color .12s ease;
+}
+#menuPage [data-edit].r20-selected{
+  outline:1px solid rgba(212,176,106,.7);
+  background:rgba(212,176,106,.06);
+}
+#menuPage [data-edit].r20-editing{
+  outline:1px solid #e8d09a;
+  background:rgba(8,40,34,.55);
+  caret-color:#e8d09a;
+  min-width:.6em;
+}
+.r20-doc-fields{display:grid;gap:7px}
+.r20-doc-fields label{display:grid;gap:3px;font-size:11px;color:#9fb4ad}
+.r20-doc-fields input{
+  width:100%;
+  border:1px solid #36534b;
+  background:#091512;
+  color:#f3ead9;
+  border-radius:8px;
+  padding:7px 8px;
+}
+
+@media print{
+  .r20-text-bar,.r20-hint{display:none!important}
+  #menuPage [data-edit],
+  #menuPage [data-edit].r20-selected,
+  #menuPage [data-edit].r20-editing{
+    outline:0!important;
+    background:transparent!important;
+  }
+}
+.r14-exporting .r20-text-bar,
+.r14-exporting [data-edit].r20-selected,
+.r14-exporting [data-edit].r20-editing{
+  outline:0!important;
+  background:transparent!important;
+}

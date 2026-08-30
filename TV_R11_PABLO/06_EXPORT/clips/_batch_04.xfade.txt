@@ -1,0 +1,5 @@
+[0:v][1:v]xfade=transition=fade:duration=0.35:offset=2.650[v1];
+[v1][2:v]xfade=transition=fade:duration=0.35:offset=5.700[v2];
+[v2][3:v]xfade=transition=fade:duration=0.35:offset=8.450[v3];
+[v3][4:v]xfade=transition=fade:duration=0.35:offset=11.300[v4];
+[v4][5:v]xfade=transition=fade:duration=0.35:offset=15.350[vout]

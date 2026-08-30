@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>8ito A4 Studio 0001</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="studio-r5.css">
+  <link rel="stylesheet" href="studio-r6.css?v=6">
+    <link rel="stylesheet" href="studio-r8-images.css">
+  <link rel="stylesheet" href="studio-r9-clean-assets.css">
+<style id="printPageStyle">@page{size:A4 portrait;margin:0}</style>
+  <link rel="stylesheet" href="studio-r13-menu-polish.css">
+  <link rel="stylesheet" href="studio-r14.css?v=14f">
+  <link rel="stylesheet" href="studio-r15.css?v=15f">
+  <link rel="stylesheet" href="studio-r19.css?v=19b">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-lockup">
+      <div class="brand-symbol">∞</div>
+      <div>
+        <strong>8ito A4 Studio</strong>
+        <span>cardápio editável · local-first</span>
+      </div>
+    </div>
+    <div class="engine-status" id="engineStatus">checando motores locais…</div>
+    <div class="top-actions">
+      <button id="saveProject" class="primary">Salvar</button>
+      <button id="resetBase">Recarregar base</button>
+      <label class="compact-field">Saída
+        <select id="printMode">
+          <option value="a4">A4 · 210×297 mm</option>
+          <option value="bleed">A4 + sangria · 216×303 mm</option>
+        </select>
+      </label>
+      <button id="printPdf" class="gold">Imprimir / PDF</button>
+      <button id="exportJson">Exportar JSON</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <aside class="editor-panel">
+      <section class="panel-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">CONTEÚDO</span>
+            <h1>Produtos</h1>
+          </div>
+          <button id="addProduct" class="icon-button" title="Adicionar produto">＋</button>
+        </div>
+        <label>Filtrar categoria
+          <select id="categoryFilter"></select>
+        </label>
+        <div id="productList" class="product-list"></div>
+      </section>
+
+      <section class="panel-section editor-form" id="productEditor" hidden>
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">ITEM SELECIONADO</span>
+            <h2 id="selectedTitle">Produto</h2>
+          </div>
+          <button id="deleteProduct" class="danger-button">Excluir</button>
+        </div>
+
+        <div class="form-grid two">
+          <label>Nome
+            <input id="fieldName" type="text" autocomplete="off">
+          </label>
+          <label>Preço (R$)
+            <input id="fieldPrice" type="number" step="0.01" min="0">
+          </label>
+        </div>
+        <div class="form-grid two">
+          <label>Categoria
+            <select id="fieldCategory"></select>
+          </label>
+          <label class="switch-row">
+            <input id="fieldActive" type="checkbox">
+            <span>Exibir no cardápio</span>
+          </label>
+        </div>
+        <label>Descrição opcional
+          <textarea id="fieldDescription" rows="2"></textarea>
+        </label>
+        <div class="row-actions">
+          <button id="moveUp">↑ Subir</button>
+          <button id="moveDown">↓ Descer</button>
+          <button id="applyFields" class="primary">Aplicar</button>
+        </div>
+
+        <div class="image-editor">
+          <div class="image-preview" id="selectedImagePreview"><span>sem imagem</span></div>
+          <div class="image-actions">
+            <label class="file-button">Usar foto
+              <input id="imageUpload" type="file" accept="image/png,image/jpeg,image/webp">
+            </label>
+            <button id="removeImage">Remover foto</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel-section ai-panel" id="aiPanel" hidden>
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">IA LOCAL</span>
+            <h2>Imagem do produto</h2>
+          </div>
+          <span class="local-badge">OLLAMA → COMFYUI</span>
+        </div>
+        <p class="muted">Você descreve a intenção. O Qwen local cria e refina o prompt para o motor disponível antes de o ComfyUI gerar a imagem.</p>
+        <label>Pedido
+          <textarea id="aiRequest" rows="3" placeholder="Ex.: foto premium da pizza portuguesa, vista 3/4, apetitosa, mantendo a identidade verde e dourada do 8ito"></textarea>
+        </label>
+        <button id="refinePrompt">1 · Refinar prompt localmente</button>
+        <label>Prompt refinado
+          <textarea id="aiPrompt" rows="7" spellcheck="false"></textarea>
+        </label>
+        <label>Negative prompt
+          <textarea id="aiNegative" rows="4" spellcheck="false"></textarea>
+        </label>
+        <div class="ai-meta" id="aiMeta">Nenhum prompt refinado ainda.</div>
+        <button id="generateImage" class="gold wide">2 · Gerar com IA local</button>
+      </section>
+
+      <section class="panel-section">
+        <span class="eyebrow">DOCUMENTO</span>
+        <h2>A4 é o padrão</h2>
+        <div class="spec-grid">
+          <div><b>210×297</b><span>mm final</span></div>
+          <div><b>3 mm</b><span>sangria</span></div>
+          <div><b>7 mm</b><span>área segura</span></div>
+          <div><b>PDF</b><span>texto vetorial</span></div>
+        </div>
+      </section>
+    </aside>
+
+    <section class="preview-stage">
+      <div class="preview-toolbar">
+        <div>
+          <span class="eyebrow">PRÉ-VISUALIZAÇÃO VIVA</span>
+          <strong id="previewMeta">A4 vertical</strong>
+        </div>
+        <div class="legend"><span class="safe-dot"></span> área segura <span class="bleed-dot"></span> sangria</div>
+      </div>
+
+      <div class="paper-shell">
+        <article class="menu-page" id="menuPage" aria-label="Prévia do cardápio A4">
+          <div class="safe-guide" aria-hidden="true"></div>
+          <div class="menu-inner">
+            <header class="menu-header">
+              <div class="menu-infinity">∞</div>
+              <div class="menu-logo">oito</div>
+              <div class="menu-tagline" id="menuTagline">salgados, doces e café</div>
+            </header>
+
+            <div class="menu-columns">
+              <div class="menu-stack" id="leftMenuColumn"></div>
+              <div class="menu-stack" id="rightMenuColumn"></div>
+            </div>
+
+            <section class="r14-pizza-band" id="pizzaBand" hidden></section>
+
+            <section class="menu-bottom-section beverage-section">
+              <h3>BEBIDAS</h3>
+              <div class="beverage-grid" id="beverageGrid"></div>
+            </section>
+
+            <section class="menu-bottom-section promo-section">
+              <h3>PROMOÇÕES</h3>
+              <div class="promo-grid" id="promoGrid"></div>
+            </section>
+
+            <footer class="menu-footer" id="menuFooter">Feito para acolher. Criado para ficar.</footer>
+          </div>
+        </article>
+      </div>
+      <div class="status-line" id="statusLine" aria-live="polite">Carregando projeto…</div>
+    </section>
+  </main>
+
+  <template id="productListTemplate">
+    <button type="button" class="product-list-item">
+      <span class="thumb"></span>
+      <span class="product-list-copy"><strong></strong><small></small></span>
+      <span class="price"></span>
+    </button>
+  </template>
+
+  <script src="app.js" defer></script>
+  <script src="autopilot-r3.js" defer></script>
+  <script src="studio-r5.js" defer></script>
+  <script src="studio-r6.js?v=6" defer></script>
+  <script src="studio-r8-images.js" defer></script>
+  <script src="studio-r13-menu-polish.js" defer></script>
+  <script src="vendor/html2canvas.min.js" defer></script>
+  <script src="studio-r14.js?v=15e" defer></script>
+  <script src="studio-r19.js?v=19b" defer></script>
+</body>
+</html>

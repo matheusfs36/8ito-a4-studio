@@ -1,0 +1,12 @@
+8ITO A4 Studio 0001 -> http://127.0.0.1:8795/
+Ollama: http://127.0.0.1:11434
+ComfyUI: http://127.0.0.1:8188
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET / HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /styles.css HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /app.js HTTP/1.1" 200 -
+[8ito] 127.0.0.1 - "GET /api/project HTTP/1.1" 200 -[8ito] 127.0.0.1 - "GET /api/health HTTP/1.1" 200 -
+
+[8ito] 127.0.0.1 - code 404, message File not found
+[8ito] 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 404 -

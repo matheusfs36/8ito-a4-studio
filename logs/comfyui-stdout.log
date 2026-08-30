@@ -1,0 +1,72 @@
+[START] Security scan
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2026-08-28 12:32:21.474
+** Platform: Windows
+** Python version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+** Python executable: C:\Users\mathe\Documents\ComfyUI\venv\Scripts\python.exe
+** ComfyUI Path: C:\Users\mathe\Documents\ComfyUI
+** ComfyUI Base Folder Path: C:\Users\mathe\Documents\ComfyUI
+** User directory: C:\Users\mathe\Documents\ComfyUI\user
+** ComfyUI-Manager config path: C:\Users\mathe\Documents\ComfyUI\user\__manager\config.ini
+** Log path: C:\Users\mathe\Documents\ComfyUI\user\comfyui.log
+
+======================================================================
+ HunyuanWorld-Mirror ComfyUI Node Pack
+ Version: 1.0.0
+ Transform 2D images into 3D worlds
+======================================================================
+ Loaded 11 nodes:
+   • Preprocess Images for HWM
+   • Load HunyuanWorld-Mirror Model
+   • HWM Inference
+   • Visualize Depth
+   • Visualize Normals
+   • Save Point Cloud
+   • Save 3D Gaussians
+   • Save Depth Map
+   • Save Camera Parameters
+   • Save COLMAP Reconstruction
+   • View 3D in Browser
+======================================================================
+
+✓ CUDA available: NVIDIA GeForce RTX 4070 Laptop GPU
+  VRAM: 8.0GB
+
+FETCH ComfyRegistry Data: 5/179
+FETCH ComfyRegistry Data: 10/179
+FETCH ComfyRegistry Data: 15/179
+FETCH ComfyRegistry Data: 20/179
+FETCH ComfyRegistry Data: 25/179
+FETCH ComfyRegistry Data: 30/179
+FETCH ComfyRegistry Data: 35/179
+FETCH ComfyRegistry Data: 40/179
+FETCH ComfyRegistry Data: 45/179
+FETCH ComfyRegistry Data: 50/179
+FETCH ComfyRegistry Data: 55/179
+FETCH ComfyRegistry Data: 60/179
+FETCH ComfyRegistry Data: 65/179
+FETCH ComfyRegistry Data: 70/179
+FETCH ComfyRegistry Data: 75/179
+FETCH ComfyRegistry Data: 80/179
+FETCH ComfyRegistry Data: 85/179
+FETCH ComfyRegistry Data: 90/179
+FETCH ComfyRegistry Data: 95/179
+FETCH ComfyRegistry Data: 100/179
+FETCH ComfyRegistry Data: 105/179
+FETCH ComfyRegistry Data: 110/179
+FETCH ComfyRegistry Data: 115/179
+FETCH ComfyRegistry Data: 120/179
+FETCH ComfyRegistry Data: 125/179
+FETCH ComfyRegistry Data: 130/179
+FETCH ComfyRegistry Data: 135/179
+FETCH ComfyRegistry Data: 140/179
+FETCH ComfyRegistry Data: 145/179
+FETCH ComfyRegistry Data: 150/179
+FETCH ComfyRegistry Data: 155/179
+FETCH ComfyRegistry Data: 160/179
+FETCH ComfyRegistry Data: 165/179
+FETCH ComfyRegistry Data: 170/179
+FETCH ComfyRegistry Data: 175/179
+FETCH ComfyRegistry Data [DONE]
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json [DONE]
