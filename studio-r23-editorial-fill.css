@@ -10,6 +10,10 @@
   --r23-cream:#f7f0e3;
 }
 
+/* The guide belongs to the editor, not the artwork. */
+.r19.r23 .safe-guide{opacity:.42}
+.r14-exporting.r19.r23 .safe-guide{display:none!important}
+
 /* Fill more of the physical sheet instead of leaving a large dead footer zone. */
 .r19.r23 .menu-inner{
   padding:1.65% 2.05% 1.5%!important;
@@ -74,10 +78,11 @@
   font-size:12.6px!important;
 }
 .r19.r23 #leftMenuColumn::after{
-  content:"∞";
-  bottom:2.1%!important;
-  font-size:42px!important;
-  color:rgba(216,180,109,.12)!important;
+  content:"—  ∞  —";
+  bottom:3.25%!important;
+  font-size:11px!important;
+  letter-spacing:.17em!important;
+  color:rgba(216,180,109,.28)!important;
   opacity:1!important;
 }
 
