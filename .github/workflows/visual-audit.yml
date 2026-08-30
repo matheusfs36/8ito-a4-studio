@@ -44,6 +44,9 @@ jobs:
       - name: Capture A4 and workspace
         run: node tools/visual-audit.mjs
 
+      - name: Capture R24 variants
+        run: node tools/visual-variants.mjs
+
       - name: Print server log
         if: always()
         run: cat /tmp/8ito-server.log || true
@@ -53,6 +56,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: visual-audit-${{ github.sha }}
-          path: visual-audit/
+          path: |
+            visual-audit/
+            visual-variants/
           if-no-files-found: error
           retention-days: 14
