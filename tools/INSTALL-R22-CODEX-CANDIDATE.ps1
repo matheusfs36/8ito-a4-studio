@@ -8,7 +8,7 @@ Set-StrictMode -Version Latest
 $Repo = 'matheusfs36/8ito-a4-studio'
 $Ref = 'codex/r22-production-hardening'
 $Stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
-$Backup = "C:\tdz-os\backups\8ito-r22-codex-pre-$Stamp"
+$Backup = "C:\tdz-os\backups\8ito-r23-codex-pre-$Stamp"
 
 function Step([string]$Text) {
     Write-Host ''
@@ -38,6 +38,8 @@ $files = @(
     'server_r22.py',
     'server_r222.py',
     'server_r223.py',
+    'studio-r23-editorial-fill.css',
+    'studio-r23-editorial-fill.js',
     'studio-r22-production.css',
     'studio-r22-production.js',
     'studio-r22-safety.js',
@@ -62,7 +64,7 @@ foreach ($rel in $files) {
 }
 Write-Host "PASS  BACKUP = $Backup" -ForegroundColor Green
 
-Step '3. APLICAR SOMENTE A CAMADA R22.3'
+Step '3. APLICAR R23 EDITORIAL + HARDENING R22.3'
 foreach ($rel in $files) {
     $dst = Join-Path $LabRoot ($rel -replace '/', '\')
     Write-Host "FETCH $rel" -ForegroundColor DarkGray
@@ -75,12 +77,12 @@ $verify = Join-Path $LabRoot 'tools\VERIFY-R22-PRODUCTION.ps1'
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File $verify
 if ($LASTEXITCODE -ne 0) {
     Write-Host ''
-    Write-Host 'SMOKE FALHOU. R22.3 NAO SERA ABERTO AUTOMATICAMENTE.' -ForegroundColor Red
+    Write-Host 'SMOKE FALHOU. R23 NAO SERA ABERTO AUTOMATICAMENTE.' -ForegroundColor Red
     Write-Host "Backup para rollback: $Backup" -ForegroundColor Yellow
     exit $LASTEXITCODE
 }
 
-Step '5. TROCAR SERVIDOR R22 LOCAL'
+Step '5. TROCAR SERVIDOR LOCAL'
 $labNeedle = $LabRoot.ToLowerInvariant()
 $old = Get-CimInstance Win32_Process -Filter "Name='python.exe' OR Name='pythonw.exe'" -ErrorAction SilentlyContinue |
     Where-Object {
@@ -89,21 +91,21 @@ $old = Get-CimInstance Win32_Process -Filter "Name='python.exe' OR Name='pythonw
         ($low.Contains('server_r22.py') -or $low.Contains('server_r222.py') -or $low.Contains('server_r223.py')) -and $low.Contains($labNeedle)
     }
 foreach ($proc in @($old)) {
-    Write-Host "STOP   PID $($proc.ProcessId) · R22 anterior" -ForegroundColor DarkGray
+    Write-Host "STOP   PID $($proc.ProcessId) · servidor anterior" -ForegroundColor DarkGray
     Stop-Process -Id $proc.ProcessId -Force -ErrorAction SilentlyContinue
 }
-if (@($old).Count -eq 0) { Write-Host 'PASS   nenhum R22 anterior precisava ser encerrado' -ForegroundColor Green }
-else { Write-Host "PASS   $(@($old).Count) servidor(es) R22 anterior(es) encerrado(s)" -ForegroundColor Green }
+if (@($old).Count -eq 0) { Write-Host 'PASS   nenhum servidor anterior precisava ser encerrado' -ForegroundColor Green }
+else { Write-Host "PASS   $(@($old).Count) servidor(es) anterior(es) encerrado(s)" -ForegroundColor Green }
 Start-Sleep -Milliseconds 350
 
-Step '6. ABRIR CANDIDATO R22.3'
+Step '6. ABRIR R23 EDITORIAL CANDIDATE'
 $launcher = Join-Path $LabRoot 'Run-8ITO-A4-Studio-0001.ps1'
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File $launcher
-if ($LASTEXITCODE -ne 0) { throw "Launcher R22.3 terminou com EXIT CODE $LASTEXITCODE" }
+if ($LASTEXITCODE -ne 0) { throw "Launcher R23 terminou com EXIT CODE $LASTEXITCODE" }
 
 Write-Host ''
 Write-Host '============================================================' -ForegroundColor DarkGreen
-Write-Host ' R22.3 CODEX CANDIDATE INSTALADO + SMOKE PASS' -ForegroundColor Green
+Write-Host ' R23 EDITORIAL CANDIDATE INSTALADO + SMOKE PASS' -ForegroundColor Green
 Write-Host '============================================================' -ForegroundColor DarkGreen
 Write-Host "Backup: $Backup" -ForegroundColor DarkGray
 Write-Host 'Main do GitHub nao foi alterada; o trabalho continua no PR draft #1.' -ForegroundColor Cyan
