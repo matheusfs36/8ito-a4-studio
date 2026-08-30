@@ -13,8 +13,8 @@ $logs = Join-Path $root 'logs'
 New-Item -ItemType Directory -Path $logs -Force | Out-Null
 
 Write-Host '============================================================' -ForegroundColor DarkGreen
-Write-Host ' 8ITO A4 STUDIO 0001 R23' -ForegroundColor Green
-Write-Host ' Editorial full-sheet + R22.3 production hardening' -ForegroundColor DarkGray
+Write-Host ' 8ITO A4 STUDIO 0001 R24' -ForegroundColor Green
+Write-Host ' Atelier editorial + R22.3 production hardening' -ForegroundColor DarkGray
 Write-Host '============================================================' -ForegroundColor DarkGreen
 
 if (-not (Test-Path -LiteralPath $server -PathType Leaf)) {
