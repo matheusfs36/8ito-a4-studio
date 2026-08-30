@@ -13,6 +13,7 @@ desktop.ini
 
 # Local snapshots and editor debris
 backups/
+snapshots/
 *.r7-backup*
 index.html.*backup*
 
