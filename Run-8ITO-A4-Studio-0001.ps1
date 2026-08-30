@@ -2,17 +2,18 @@ $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
+$serverR222 = Join-Path $root 'server_r222.py'
 $serverR22 = Join-Path $root 'server_r22.py'
 $serverR4 = Join-Path $root 'server_r4.py'
 $serverR3 = Join-Path $root 'server_r3.py'
 $serverBase = Join-Path $root 'server.py'
-$server = if (Test-Path -LiteralPath $serverR22 -PathType Leaf) { $serverR22 } elseif (Test-Path -LiteralPath $serverR4 -PathType Leaf) { $serverR4 } elseif (Test-Path -LiteralPath $serverR3 -PathType Leaf) { $serverR3 } else { $serverBase }
+$server = if (Test-Path -LiteralPath $serverR222 -PathType Leaf) { $serverR222 } elseif (Test-Path -LiteralPath $serverR22 -PathType Leaf) { $serverR22 } elseif (Test-Path -LiteralPath $serverR4 -PathType Leaf) { $serverR4 } elseif (Test-Path -LiteralPath $serverR3 -PathType Leaf) { $serverR3 } else { $serverBase }
 $logs = Join-Path $root 'logs'
 New-Item -ItemType Directory -Path $logs -Force | Out-Null
 
 Write-Host '============================================================' -ForegroundColor DarkGreen
-Write-Host ' 8ITO A4 STUDIO 0001 R22' -ForegroundColor Green
-Write-Host ' A4 editavel + snapshots + restore seguro + IA por candidatos' -ForegroundColor DarkGray
+Write-Host ' 8ITO A4 STUDIO 0001 R22.2' -ForegroundColor Green
+Write-Host ' A4 editavel + pre-flight + baselines + snapshots + IA segura' -ForegroundColor DarkGray
 Write-Host '============================================================' -ForegroundColor DarkGreen
 
 if (-not (Test-Path -LiteralPath $server -PathType Leaf)) {
