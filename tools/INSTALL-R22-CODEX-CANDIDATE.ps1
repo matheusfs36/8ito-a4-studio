@@ -37,6 +37,7 @@ $files = @(
     'Run-8ITO-A4-Studio-0001.ps1',
     'server_r22.py',
     'server_r222.py',
+    'server_r223.py',
     'studio-r22-production.css',
     'studio-r22-production.js',
     'studio-r22-safety.js',
@@ -44,6 +45,8 @@ $files = @(
     'studio-r22-workspace.js',
     'studio-r22-preflight.css',
     'studio-r22-preflight.js',
+    'studio-r22-release.css',
+    'studio-r22-release.js',
     'tools/VERIFY-R22-PRODUCTION.ps1'
 )
 
@@ -59,7 +62,7 @@ foreach ($rel in $files) {
 }
 Write-Host "PASS  BACKUP = $Backup" -ForegroundColor Green
 
-Step '3. APLICAR SOMENTE A CAMADA R22.2'
+Step '3. APLICAR SOMENTE A CAMADA R22.3'
 foreach ($rel in $files) {
     $dst = Join-Path $LabRoot ($rel -replace '/', '\')
     Write-Host "FETCH $rel" -ForegroundColor DarkGray
@@ -72,7 +75,7 @@ $verify = Join-Path $LabRoot 'tools\VERIFY-R22-PRODUCTION.ps1'
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File $verify
 if ($LASTEXITCODE -ne 0) {
     Write-Host ''
-    Write-Host 'SMOKE FALHOU. R22.2 NAO SERA ABERTO AUTOMATICAMENTE.' -ForegroundColor Red
+    Write-Host 'SMOKE FALHOU. R22.3 NAO SERA ABERTO AUTOMATICAMENTE.' -ForegroundColor Red
     Write-Host "Backup para rollback: $Backup" -ForegroundColor Yellow
     exit $LASTEXITCODE
 }
@@ -83,7 +86,7 @@ $old = Get-CimInstance Win32_Process -Filter "Name='python.exe' OR Name='pythonw
     Where-Object {
         $cmd = [string]$_.CommandLine
         $low = $cmd.ToLowerInvariant()
-        ($low.Contains('server_r22.py') -or $low.Contains('server_r222.py')) -and $low.Contains($labNeedle)
+        ($low.Contains('server_r22.py') -or $low.Contains('server_r222.py') -or $low.Contains('server_r223.py')) -and $low.Contains($labNeedle)
     }
 foreach ($proc in @($old)) {
     Write-Host "STOP   PID $($proc.ProcessId) · R22 anterior" -ForegroundColor DarkGray
@@ -93,14 +96,14 @@ if (@($old).Count -eq 0) { Write-Host 'PASS   nenhum R22 anterior precisava ser 
 else { Write-Host "PASS   $(@($old).Count) servidor(es) R22 anterior(es) encerrado(s)" -ForegroundColor Green }
 Start-Sleep -Milliseconds 350
 
-Step '6. ABRIR CANDIDATO R22.2'
+Step '6. ABRIR CANDIDATO R22.3'
 $launcher = Join-Path $LabRoot 'Run-8ITO-A4-Studio-0001.ps1'
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File $launcher
-if ($LASTEXITCODE -ne 0) { throw "Launcher R22.2 terminou com EXIT CODE $LASTEXITCODE" }
+if ($LASTEXITCODE -ne 0) { throw "Launcher R22.3 terminou com EXIT CODE $LASTEXITCODE" }
 
 Write-Host ''
 Write-Host '============================================================' -ForegroundColor DarkGreen
-Write-Host ' R22.2 CODEX CANDIDATE INSTALADO + SMOKE PASS' -ForegroundColor Green
+Write-Host ' R22.3 CODEX CANDIDATE INSTALADO + SMOKE PASS' -ForegroundColor Green
 Write-Host '============================================================' -ForegroundColor DarkGreen
 Write-Host "Backup: $Backup" -ForegroundColor DarkGray
 Write-Host 'Main do GitHub nao foi alterada; o trabalho continua no PR draft #1.' -ForegroundColor Cyan
